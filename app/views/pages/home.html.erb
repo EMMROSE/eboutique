@@ -1,3 +1,19 @@
 <h1>Samedi 28</h1>
-<%= link_to "nos produits", products_path, class: "btn btn-primary"%>
-<%= link_to "nos ateliers", root_path, class: "btn btn-primary"%>
+<div class: "container">
+  <h2>Le Concept</h2>
+</div>
+<div class: "container">
+
+  <%= link_to products_path do%>
+    <h2>La boutique </h2>
+  <% end %>
+</div>
+<div class: "container">
+  <h2> Studio Aménagement</h2>
+</div>
+<div class: "container">
+  <h2> Les Ateliers</h2>
+  <%= link_to "nos ateliers", root_path, class: "btn btn-primary"%>
+</div>
+
+
