@@ -4,7 +4,7 @@
   </h1>
   <p><%= @product.description %></p>
   <h3>
-    <%=@product.price humanized_money_with_symbol %>
+    <%= humanized_money_with_symbol(@product.price)%>
   </h3>
   <br>
   <%= link_to "Add to cart", line_items_path(product_id: @product.id), method: :post, class: "btn btn-primary" %>

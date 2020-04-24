@@ -1,11 +1,11 @@
 <div class="container">
   <% if @line_items.empty? %>
     <div>
-      <%= link_to "Continuer Shopping", products_path, class:'btn-secondary' %>
+      <%= link_to "Continuer Shopping", products_path, class: 'btn btn-secondary' %>
     </div>
   <% else %>
     <div>
-      <%= link_to t('.continue_shopping'), products_path, class:'continue-shopping' %>
+      <%= link_to "Continuer Shopping", products_path, class: "btn btn-primary"%>
     </div>
     <div>
       <div>
@@ -27,13 +27,13 @@
             <% @line_items.each do |line_item| %>
               <tr>
                 <td>
-                  <%= cl_image_tag line_item.product.photo.key, height: 100, width: 100, crop: :fill, quality: 100, gravity: :auto %>
+           <!--  -->
                 </td>
                 <td>
                   <%= line_item.product.name %>
                 </td>
                 <td>
-                  <%= line_item.product.price humanized_money_with_symbol %>
+                  <%= line_item.product.price %>
                 </td>
                 <td>
                 <%= link_to line_item_reduce_path(id: line_item), method: :post %>
