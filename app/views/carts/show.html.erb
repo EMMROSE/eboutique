@@ -1,0 +1,69 @@
+<div class="container">
+  <% if @line_items.empty? %>
+    <div>
+      <%= link_to "Continuer Shopping", products_path, class:'btn-secondary' %>
+    </div>
+  <% else %>
+    <div>
+      <%= link_to t('.continue_shopping'), products_path, class:'continue-shopping' %>
+    </div>
+    <div>
+      <div>
+        <h2>
+          <%= "My Cart"%>
+        </h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th><%='price'%></th>
+              <th><%='quantity'%></th>
+              <th><%='total'%></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @line_items.each do |line_item| %>
+              <tr>
+                <td>
+                  <%= cl_image_tag line_item.product.photo.key, height: 100, width: 100, crop: :fill, quality: 100, gravity: :auto %>
+                </td>
+                <td>
+                  <%= line_item.product.name %>
+                </td>
+                <td>
+                  <%= line_item.product.price humanized_money_with_symbol %>
+                </td>
+                <td>
+                <%= link_to line_item_reduce_path(id: line_item), method: :post %>
+                <%= link_to line_item_add_path(id: line_item), method: :post %>
+                <span>
+                  <%= line_item.quantity %>
+                </span>
+                <span>
+                  <%= line_item.quantity %>
+                </span>
+
+                </td>
+                <td>
+                  <%= line_item.total_price humanized_money_with_symbol%>
+                </td>
+                <td>
+                  <%= link_to line_item_path(line_item), method: :delete%>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'empty_cart', cart_path, method: :delete, data: {confirm: 'are_you_sure?'} %>
+      </div>
+      <span>
+        Total:
+      </span>
+      <span>
+        <%= @cart.sub_total humanized_money_with_symbol%>
+      </span>
+      <%= link_to 'order', new_order_path, class:'btn-primary' %>
+  <% end %>
+</div>
