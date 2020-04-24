@@ -47,7 +47,7 @@
 
                 </td>
                 <td>
-                  <%= line_item.total_price humanized_money_with_symbol%>
+                  <%= humanized_money_with_symbol(line_item.total_price) %>
                 </td>
                 <td>
                   <%= link_to line_item_path(line_item), method: :delete%>
@@ -62,7 +62,7 @@
         Total:
       </span>
       <span>
-        <%= @cart.sub_total humanized_money_with_symbol%>
+        <%= humanized_money_with_symbol(@cart.sub_total) %>
       </span>
       <%= link_to 'order', new_order_path, class: "btn btn-primary"%>
   <% end %>
