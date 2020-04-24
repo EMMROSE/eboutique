@@ -1,6 +1,7 @@
 <div>
   <% @products.each do |product| %>
    <li>
+    <span><%= cl_image_tag product.photo.key, height: 100, width: 70, crop: :fill, quality: 100, gravity: :auto %></span>
      <p>
        <%= product.name %>
        <%= product.price %>

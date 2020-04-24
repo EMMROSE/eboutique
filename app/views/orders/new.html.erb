@@ -1,0 +1,26 @@
+<% if current_user == nil && session[:without_login] == nil %>
+  <div class="login-container">
+    <%= link_to "login", new_user_session_path, class: "btn btn-danger" %>
+    <span>
+      <%= "OU" %>
+    </span>
+    <span>
+      <%= link_to 'continue_without_login', without_login_path, method: :post, class: "btn btn-secondary"%>
+    </span>
+  </div>
+<% end %>
+
+<div>
+  <div>
+    <%= link_to 'back_to_cart', :back %>
+  </div>
+  <div>
+    <div>
+      <h2><%= "your_information" %></h2>
+      <% if current_user %>
+        <%= render 'form_with_user' %>
+      <% else %>
+        <%= render 'form_without_user' %>
+      <% end %>
+  </div>
+</div>

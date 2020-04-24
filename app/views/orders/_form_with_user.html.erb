@@ -1,0 +1,26 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.input :email, label: false, placeholder: 'email', input_html: {value: current_user.email} %>
+  <%= f.input :address, label: false, placeholder: 'address', input_html: {value: current_user.address}  %>>
+  <%= f.input :zip_code, label: false, placeholder: 'zip_code', input_html: {value: current_user.zip_code}  %>
+  <%= f.input :city, label: false, placeholder: 'city', input_html: {value: current_user.city}  %>
+
+  <div class="save-address">
+    <%= check_box_tag(:save_address) %>
+    <label for="save_address"> <%= 'save_address' %></label>
+  </div>
+</div>
+<div>
+  <h2>
+    <%= 'checkout' %>
+  </h2>
+  <div>
+    <span>
+      Total:
+    </span>
+    <span>
+      <%= @cart.sub_total %>
+    </span>
+  </div>
+    <%= f.submit 'pay', class: 'btn btn-primary' %>
+</div>
+<% end %>

@@ -3,6 +3,7 @@
     <%= @product.name %>
   </h1>
   <p><%= @product.description %></p>
+  <span><%= cl_image_tag @product.photo.key, height: 250, width: 175, crop: :fill, quality: 100, gravity: :auto %></span>
   <h3>
     <%= humanized_money_with_symbol(@product.price)%>
   </h3>
