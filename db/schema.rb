@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_164110) do
     t.string "zip_code"
     t.string "city"
     t.string "checkout_session_id"
-    t.integer "amount_cents_cents", default: 0, null: false
-    t.string "amount_cents_currency", default: "EUR", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_164110) do
     t.string "description"
     t.string "sku"
     t.string "photo"
-    t.integer "price_cents_cents", default: 0, null: false
-    t.string "price_cents_currency", default: "EUR", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "EUR", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

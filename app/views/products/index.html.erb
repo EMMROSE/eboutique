@@ -4,7 +4,7 @@
      <p>
        <%= product.name %>
        <%= product.price %>
-       <%= link_to "Découvrir ce produit", product_path(product) %>
+       <%= link_to "Découvrir ce produit", product_path(product), class: "btn btn-primary" %>
      </p>
    </li>
   <% end %>

@@ -7,5 +7,5 @@
     <%=@product.price humanized_money_with_symbol %>
   </h3>
   <br>
-  <%= link_to "Add to cart", line_items_path(product_id: @product.id), method: :post, class:'btn-primary' %>
+  <%= link_to "Add to cart", line_items_path(product_id: @product.id), method: :post, class: "btn btn-primary" %>
 </div>
