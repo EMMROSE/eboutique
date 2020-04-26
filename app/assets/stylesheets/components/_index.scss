@@ -1,4 +1,39 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "card";
 @import "navbar";
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+}
+
+h2 {
+  color: black;
+  & :hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.univers {
+  display: flex;
+}
+
+.univers-left {
+  flex-basis: 50%;
+  img {
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+.univers-right {
+  flex-basis: 50%;
+  img {
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+}
