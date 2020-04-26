@@ -10,6 +10,7 @@
 
 h2 {
   color: black;
+  text-decoration: none;
   & :hover {
     color: black;
     text-decoration: none;
@@ -18,22 +19,50 @@ h2 {
 
 .univers {
   display: flex;
+  padding: 10px 50px;
 }
 
 .univers-left {
   flex-basis: 50%;
   img {
-    height: auto;
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    max-width: 505px;
   }
+}
 .univers-right {
   flex-basis: 50%;
   img {
-    height: auto;
     width: 100%;
-    background-size: cover;
-    background-position: center;
+    max-width: 400px;
   }
 }
+
+.boutique {
+  display: flex;
+  padding: 10px 50px;
+}
+
+.boutique-left {
+  flex-basis: 50%;
+  position: relative;
+  z-index: 1;
+  img {
+    position: absolute;
+    top: 120px; left: 220px;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.boutique-right {
+  flex-basis: 50%;
+  z-index: 2;
+  img {
+    width: 100%;
+    max-width: 505px;
+  }
+}
+
+
+
+
