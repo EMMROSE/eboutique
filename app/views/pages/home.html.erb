@@ -1,3 +1,10 @@
+<head>
+  <style>
+  body { margin: 0; padding: 0; }
+  #map { width: 50%; height: 50vh;}
+  </style>
+</head>
+
 <div style="text-align: center;">
   <br>
   <p>" J'AI CONÇU SAMEDI 28 COMME UN VÉRITABLE LIEU DE VIE :</p>
@@ -21,24 +28,41 @@
 <div class= "container">
   <div class="boutique">
     <div class= "boutique-left">
-      <img src="assets/univers-right.png" alt="">
+      <%= link_to products_path do%>
+        <img src="assets/boutique-left.png" alt="">
+      <% end %>
     </div>
     <div class= "boutique-right">
-      <img src="assets/univers-left.png" alt="">
+      <img src="assets/boutique-right.png" alt="">
     </div>
   </div>
 </div>
 
 <div class= "container">
-  <h2> Studio Aménagement</h2>
+  <div class="atelier">
+    <div class= "atelier-left">
+      <img src="assets/atelier-left.png" alt="">
+    </div>
+    <div class= "atelier-right">
+      <h2>LES ATELIERS <br>CRÉATIFS</h2>
+      <h4>Worshops à l’atelier 28</h4><br>
+      <button class="" type="button">Oh oui, je veux essayer !</button>
+    </div>
+  </div>
 </div>
-<div class= "container">
-  <%= link_to root_path do%>
-    <h2>LES ATELIERS CRÉATIFS</h2>
-  <% end %>
-</div>
+
 <div>
   <h2>INSTAGRAM FEED</h2>
 </div>
 
-
+<div id="map">
+  <script class="map-style">
+    mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY'] %>";
+  var map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+  center: [6.0492664, 43.1113592], // starting position [lng, lat]
+  zoom: 15 // starting zoom
+  });
+  </script>
+</div>
