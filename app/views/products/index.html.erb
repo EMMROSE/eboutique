@@ -1,41 +1,22 @@
 <div class="cards">
   <% @products.each do |product| %>
-   <li>
-    <span><%= cl_image_tag product.photo.key, height: 100, width: 70, crop: :fill, quality: 100, gravity: :auto %></span>
-     <p>
-       <%= product.name %>
-       <%= product.price %>
-       <%= link_to "Découvrir ce produit", product_path(product), class: "btn btn-primary" %>
-     </p>
-   </li>
+    <div class="wrapper">
+      <div class="top">
+        <span><%= cl_image_tag product.photo.key, class: "front-picture"%></span>
+        <span><img src="assets/logo.png" alt="" class= "back-picture"></span> <!-- à modifier une fois le model product changé -->
+      </div>
+      <div class="bottom">
+        <div>
+          <h2><%= product.name %></h2>
+          <h4><%= product.price %>€</h4>
+        </div>
+        <div>
+          <a href="#"><i class="fas fa-cart-plus"></i></a>
+          <h4><%= link_to "en savoir +", product_path(product) %></h4>
+        </div>
+
+      </div>
+    </div>
   <% end %>
 </div>
 
-<div class="wrapper">
-  <div class="container">
-    <div class="top" style="background-image: url(../assets/verriere.jpg); background-size: cover"></div>
-    <div class="bottom">
-      <div class="left">
-        <div class="details">
-          <h1>Name</h1>
-          <p>15 €</p>
-        </div>
-        <div class="buy"><i class="material-icons">Ajoutez</i></div>
-      </div>
-      <div class="right">
-        <div class="done"><i class="material-icons">done</i></div>
-        <div class="details">
-          <h1>Chair</h1>
-          <p>Added</p>
-        </div>
-        <div class="remove"><i class="material-icons">clear</i></div>
-      </div>
-    </div>
-  </div>
-  <div class="inside">
-    <div class="icon"><i class="material-icons">info</i></div>
-    <div class="contents">
-      <p>description</p>
-    </div>
-  </div>
-</div>
