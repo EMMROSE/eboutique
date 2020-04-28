@@ -7,4 +7,5 @@ class Product < ApplicationRecord
 
   has_many :line_items, dependent: :destroy
   has_one_attached :photo
+  has_one_attached :cover
 end

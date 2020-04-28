@@ -3,18 +3,17 @@
     <div class="wrapper">
       <div class="top">
         <span><%= cl_image_tag product.photo.key, class: "front-picture"%></span>
-        <span><img src="assets/logo.png" alt="" class= "back-picture"></span> <!-- à modifier une fois le model product changé -->
+        <span><%= cl_image_tag product.cover.key, class: "back-picture"%></span>
       </div>
       <div class="bottom">
         <div>
-          <h2><%= product.name %></h2>
-          <h4><%= product.price %>€</h4>
+          <h3><%= product.name %></h3>
+          <h5><%= product.price %>€</h5>
         </div>
         <div>
           <a href="#"><i class="fas fa-cart-plus"></i></a>
-          <h4><%= link_to "en savoir +", product_path(product) %></h4>
+          <h5><%= link_to "en savoir +", product_path(product) %></h5>
         </div>
-
       </div>
     </div>
   <% end %>
