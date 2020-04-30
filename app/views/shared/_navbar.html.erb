@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-style">
   <div>
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
     <% end %>
   </div>
@@ -10,10 +10,10 @@
   </button>
 
   <div class="nav-items" id="navbarSupportedContent">
-    <%= link_to "Univers", "#", class: "nav-link" %>
-    <%= link_to "Boutique", "#", class: "nav-link" %>
-    <%= link_to "Studio", "#", class: "nav-link" %>
+    <%= link_to "Univers", univers_path, class: "nav-link" %>
+    <%= link_to "Boutique", products_path, class: "nav-link" %>
+    <%= link_to "Studio", studio_path, class: "nav-link" %>
     <%= link_to "Ateliers", "#", class: "nav-link" %>
   </div>
-</div>
+</div><br>
 

@@ -1,12 +1,18 @@
-<div>
-  <h1>
-    <%= @product.name %>
-  </h1>
-  <p><%= @product.description %></p>
-  <span><%= cl_image_tag @product.photo.key, height: 250, width: 175, crop: :fill, quality: 100, gravity: :auto %></span>
-  <h3>
-    <%= humanized_money_with_symbol(@product.price)%>
-  </h3>
-  <br>
-  <%= link_to "Add to cart", line_items_path(product_id: @product.id), method: :post, class: "btn btn-primary" %>
+
+<div class= "container">
+  <div class= "product">
+    <%= cl_image_tag @product.photo.key %>
+    <%= cl_image_tag @product.cover.key %>
+    <div class= "product-description">
+      <div class= "description">
+        <h1><%= @product.name %></h1>
+        <h3><%= @product.description %></h3>
+      </div>
+      <div class= "price">
+        <h3><%= humanized_money_with_symbol(@product.price)%></h3>
+        <%= link_to "Ajoutez à votre panier", line_items_path(product_id: @product.id), method: :post, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Retour à la Boutique", products_path, class: "btn btn-primary" %>
 </div>
