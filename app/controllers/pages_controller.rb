@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :studio, :univers]
+  skip_before_action :authenticate_user!, only: [ :home, :studio, :univers, :atelier]
 
   def home
   end
@@ -8,5 +8,8 @@ class PagesController < ApplicationController
   end
 
   def univers
+  end
+
+  def atelier
   end
 end

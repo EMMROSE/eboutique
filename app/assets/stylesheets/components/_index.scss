@@ -73,9 +73,10 @@ h2 {
     max-width: 505px;
   }
 }
-
+//CSS for Section atelier into home page
 .atelier {
   display: flex;
+  flex-direction: row;
   padding: 10px 50px;
   margin-top: 20px;
 }
@@ -87,7 +88,7 @@ h2 {
     max-width: 505px;
   }
 }
-.atelier-right {
+.home-atelier-right {
   flex-basis: 50%;
   border: solid 2px $gray;
   height: 320px;
@@ -101,6 +102,28 @@ h2 {
     color: $dark-gray;
   }
 }
+//CSS for atelier page
+.page-atelier {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 50px;
+  margin-top: 20px;
+}
+.page-atelier-right {
+  flex-basis: 50%;
+  margin-left: 20px;
+  text-align: left;
+  color: $gray;
+  h1, h2, h3{
+    color: $dark-gray;
+  }
+}
+.page-atelier-bottom {
+  h1, h2, h3{
+    color: $dark-gray;
+  }
+}
+
 .map-style {
   height: 20vh;
   width: 505px;
@@ -110,3 +133,25 @@ h2 {
 }
 
 
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .page-atelier {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-atelier-right {
+    flex-basis: 50%;
+    border: solid 2px $gray;
+    height: 320px;
+    width: 50%;
+    max-width: 360px;
+    text-align: left;
+    padding: 50px;
+    margin-top: 108px;
+    color: $gray;
+    h1, h2, h4{
+      color: $dark-gray;
+    }
+  }
+}

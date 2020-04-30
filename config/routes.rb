@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'univers', to: 'pages#univers'
   get 'studio', to: 'pages#studio'
+  get 'atelier', to: 'pages#atelier'
 
   resources :contacts, only: [:new, :create]
 
