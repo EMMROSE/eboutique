@@ -1,15 +1,23 @@
 <div class="container" style="margin-top: 100px;">
-  <h1>STUDIO EN AMENAGEMENT D’ESPACE ET DECORATION</h1>
   <div class="studio-cards">
+    <div class="studio-card studio-card-border">
+      <%= link_to new_contact_path do %>
+        <h3 class="title_formule">Formule #1 </h3>
+        <h5>Consultation déco en boutique <br>à 250 € TTC.</h5>
+        <p>(devis sur mesure pour un suivi et un accompagnement de chantier.)</p>
+      <% end %>
+    </div>
+    <div class="studio-card studio-card-border">
+      <%= link_to new_contact_path do %>
+        <h3 class="title_formule">Formule #2 </h3>
+        <h5>Shopping personnalisé en <strong>boutique</strong> ou <br> sur le <strong>Salon Maison & Objet</strong>.</h5>
+      <% end %>
+    </div>
     <div class="studio-card">
-        <h4><strong>Formule</strong> comprenant une consultation déco en boutique <br>à 250 € TTC.</h4>
-        <p>(devis sur mesure pour un suivit et accompagnement de chantier)</p>
-      </div>
-      <div class="studio-card">
-        <h4><strong>Formule</strong> comprenant un shopping personnalisé en <strong>boutique</strong><br>ou sur le <br><strong>Salon Maison & Objet</strong>.</h4>
-      </div>
-      <div class="studio-card">
-        <h4>Décrivez nous votre projet</h4>
-      </div>
+      <%= link_to new_contact_path do %>
+        <h3 class="title_formule">Formule #3 </h3>
+        <h5>Décrivez nous votre projet</h5>
+      <% end %>
+    </div>
   </div>
 </div>

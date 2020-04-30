@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
   get 'univers', to: 'pages#univers'
   get 'studio', to: 'pages#studio'
+
+  resources :contacts, only: :new
 
   resources :products
   resources :orders do

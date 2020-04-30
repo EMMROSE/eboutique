@@ -1,0 +1,14 @@
+<!-- app/views/contacts/new.html.erb -->
+<div class="container form-container">
+ <% new_contact = Contact.new %>
+ <%= simple_form_for(new_contact) do |f| %>
+   <div class="form-top">
+     <%= f.input :name, label: 'votre nom', placeholder: "Arthur Martin" %>
+     <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
+     <%= f.input :message, label: 'DÃŠcrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
+    </div>
+   <div class="form-button">
+    <%= f.submit "Soumettre", class: 'btn btn-contact' %>
+   </div>
+ <% end %>
+</div>
