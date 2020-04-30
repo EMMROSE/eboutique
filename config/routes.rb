@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'univers', to: 'pages#univers'
   get 'studio', to: 'pages#studio'
 
-  resources :contacts, only: :new
+  resources :contacts, only: [:new, :create]
 
   resources :products
   resources :orders do
