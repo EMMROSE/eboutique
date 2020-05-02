@@ -11,7 +11,14 @@
       <img src="assets/univers-left.png" alt="">
     </div>
     <div class= "univers-right">
-      <img src="assets/univers-right.png" alt="">
+      <img src="assets/univers-right2.png" alt="">
+      <div class="button-diagonal" id="button-home-univers">
+        <%= link_to univers_path do %>
+          <button>Ca m'intrigue!</button>
+        <% end %>
+        <span class="triangle-top-left"></span>
+        <span class="triangle-bottom-right"></span>
+      </div>
     </div>
   </div>
 </div>
@@ -34,10 +41,16 @@
     <div class= "atelier-left">
       <img src="assets/atelier-left.png" alt="">
     </div>
-    <div class= "home-atelier-right">
+    <div class= "home-atelier-right button-diagonal">
       <h2>LES ATELIERS <br>CRÉATIFS</h2>
-      <h4>Worshops à l’Atelier 28</h4><br>
-      <button class="" type="button">Oh oui, je veux essayer !</button>
+      <h4>Workshops à l’Atelier 28</h4><br>
+      <div class="button-diagonal">
+        <%= link_to atelier_path do %>
+          <button type="button" id="button-home-atelier">Oh oui, je veux essayer !</button>
+        <% end %>
+        <span class="triangle-top-left"></span>
+        <span id="triangle-bottom-right-home-studio"></span>
+      </div>
     </div>
   </div>
 </div>
@@ -52,8 +65,8 @@
   var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-  center: [6.0492664, 43.1113592], // starting position [lng, lat]
-  zoom: 16 // starting zoom
+  center: [6.0470777, 43.1093471], // starting position [lng, lat]
+  zoom: 17 // starting zoom
   });
   </script>
 </div>

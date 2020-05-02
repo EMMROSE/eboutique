@@ -1,0 +1,65 @@
+.button-diagonal {
+  position: relative;
+  button {
+    height: 60px;
+    width: 220px;
+    border: solid 12px $dark-gray;
+    background-color: white;
+    font-color: black;
+    z-index:1;
+    position: relative;
+  }
+  .triangle-top-left {
+      position: absolute;
+      top: 0px; left: 0px;
+      z-index:9;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 10px 0 0;
+      border-color: white transparent transparent transparent;
+  }
+  .triangle-bottom-right {
+    position: absolute;
+    bottom: 0px; left: 210px;
+    z-index:9;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    border-color: transparent transparent white transparent;
+  }
+}
+
+#button-diagonal-studio {
+  margin-left: 40%;
+  margin-top: 32px;
+}
+#button-home-univers {
+  margin-left: 40px;
+  margin-top: 20px;
+}
+#button-home-atelier {
+  width: 230px;
+}
+#triangle-bottom-right-home-studio {
+  position: absolute;
+  bottom: 0px; left: 220px;
+  z-index:9;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent white transparent;
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  #button-diagonal-studio {
+    margin-left: 24%;
+    margin-top: 12px;
+  }
+}

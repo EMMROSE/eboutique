@@ -1,6 +1,7 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "button";
 @import "card";
 @import "margin-navbar";
 @import "navbar";
@@ -44,7 +45,7 @@ h2 {
   flex-basis: 50%;
   img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
   }
 }
 
