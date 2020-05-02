@@ -4,8 +4,8 @@
     height: 60px;
     width: 220px;
     border: solid 12px $dark-gray;
-    background-color: white;
-    font-color: black;
+    background-color: $lighter-gray;
+    font-color: $dark-gray;
     z-index:1;
     position: relative;
   }

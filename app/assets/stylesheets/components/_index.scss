@@ -129,12 +129,23 @@ h2 {
   height: 20vh;
   width: 505px;
   > script > a{
-      color: transparent;
+      color: white !important;
   }
 }
 
-
-
+.map_contact {
+  display: flex;
+  flex-direction: row;
+}
+#contact {
+  flex-basis: 50%;
+  width: 50%;
+}
+.mapboxgl-control-container{
+  a {
+    color: white !important;
+  }
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .page-atelier {
@@ -154,5 +165,9 @@ h2 {
     h1, h2, h4{
       color: $dark-gray;
     }
+  }
+  .map_contact {
+    display: flex;
+    flex-direction: column;
   }
 }
