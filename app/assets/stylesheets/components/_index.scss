@@ -146,6 +146,13 @@ h2 {
     color: white !important;
   }
 }
+
+.eui-widget-title, .eapps-instagram-feed-title {
+  display: none !important;
+}
+.elfsight-app-a6106147-0ab9-4475-87ed-f762b85f4529, .eapps-instagram-feed, .eapps-widget, .eapps-widget-show-toolbar {
+
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .page-atelier {
