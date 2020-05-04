@@ -17,5 +17,18 @@
     <%= link_to "Ateliers", atelier_path, class: "nav-link" %>
   </div>
 </div>
+<div class="cart fixed-top">
+  <%= link_to cart_path(@current_cart) do %>
+    <i class="fab fa-opencart"></i>
+    <% cart = @current_cart %>
+    <% items =0 %>
+    <% cart.line_items.each do |item| %>
+     <% items += item.quantity %>
+    <% end %>
+    <% if items > 0 %>
+      <p><%= items %></p>
+    <% end %>
+  <% end %>
+</div>
 <div class="margin-navbar"></div>
 
