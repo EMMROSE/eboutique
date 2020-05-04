@@ -3,7 +3,6 @@
 @import "avatar";
 @import "button";
 @import "card";
-@import "cart";
 @import "margin-navbar";
 @import "navbar";
 @import "product";
@@ -19,6 +18,10 @@ h2 {
     color: black;
     text-decoration: none;
   }
+}
+
+.logo {
+  img { height: 64px; width: 64px}
 }
 
 .pages-style {
