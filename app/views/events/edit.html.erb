@@ -1,0 +1,24 @@
+<div class="container form-container">
+ <h4>Editez l'évènement <%= @event.title %></h4>
+ <%= simple_form_for(@event) do |f| %>
+   <div class="form-top">
+    <%= f.input :title, label: 'Titre', placeholder: "Titre de l'évènement ou de l'atelier" %>
+    <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description de l'évènement..." %>
+    <div class="d-flex">
+      <%= f.input :cover, label: 'Ajoutez une photo de couverture', as: :file %>
+    </div>
+    <div>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Statut de l'évènement</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected>Choose...</option>
+        <option value="true">à venir</option>
+        <option value="false">passé</option>
+
+      </select>
+    </div>
+   </div>
+   <div class="form-button">
+    <%= f.submit "Enregistrer les modifications", class: 'btn btn-primary' %>
+   </div>
+ <% end %>
+</div>

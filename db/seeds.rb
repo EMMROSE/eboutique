@@ -10,36 +10,36 @@ require "open-uri"
 puts 'start seeds...'
 
 Product.destroy_all
-product1 = Product.create({:name=>"Dolce Vita", :description=>"L'art de la table from Roma", :sku=>"123456", price_cents: 320})
-product2 = Product.create({:name=>"Lucky Plate", :description=>"Jeux d'assiettes Lucky", :sku=>"123457",price_cents: 320})
-product3 = Product.create({:name=>"Serviette", :description=>"Draps de bain en coton", :sku=>"123458",price_cents: 350})
-product4 = Product.create({:name=>"Verres", :description=>"Lot de 6 verres à moutarde", :sku=>"123459",price_cents: 320})
-product5 = Product.create({:name=>"Luminaire", :description=>"Luminaire de la marque SAMODE", :sku=>"123450",price_cents: 42000})
+product1 = Product.create({:name=>"Planches", :description=>"Jeux de planches en bois rectangulaires pour décorer votre chemin de table", :sku=>"123456", price_cents: 3200})
+product2 = Product.create({:name=>"Assiette Poisson", :description=>"Assiette à poisson  Bitossi", :sku=>"123457",price_cents: 1500})
+product3 = Product.create({:name=>"Planche ronde", :description=>"Planche ronde en teck (dimension 90cm de diamètre)", :sku=>"123458",price_cents: 5000})
+product4 = Product.create({:name=>"Assiettes", :description=>"Lot de 6 assiettes la Vita é Bella", :sku=>"123459",price_cents: 2400})
+product5 = Product.create({:name=>"Assiette 70's", :description=>"Assiette en terre cuite collection 70's", :sku=>"123450",price_cents: 2500})
 puts "Total number of products: #{Product.all.count}"
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/IMG_7586_w3az6u.jpg')
-product1.photo.attach(io: file, filename: 'IMG_7586_w3az6u.jpg', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/FQHB6877_kvhduv.jpg')
-product1.cover.attach(io: file, filename: 'FQHB6877_kvhduv.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/planche_1.jpg')
+product1.photo.attach(io: file, filename: 'planche_1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/planche_2.jpg')
+product1.cover.attach(io: file, filename: 'planche_2.jpg', content_type: 'image/jpg')
 puts 'number 1 finished'
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/IMG_7700_s4p5ei.jpg')
-product2.photo.attach(io: file, filename: 'IMG_7700_s4p5ei.jpg', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/IMG_7844_xyplxx.jpg')
-product2.cover.attach(io: file, filename: 'IMG_7844_xyplxx.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/bitossi_assiette_poisson.jpg')
+product2.photo.attach(io: file, filename: 'bitossi_assiette_poisson.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/bitossi_assiette_poisson2.jpg')
+product2.cover.attach(io: file, filename: 'bitossi_assiette_poisson2.jpg', content_type: 'image/jpg')
 puts 'number 2 finished'
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/DOQN8372_koyf93.jpg')
-product3.photo.attach(io: file, filename: 'DOQN8372_koyf93.jpg', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/BCXJ9342_mdxils.jpg')
-product3.cover.attach(io: file, filename: 'BCXJ9342_mdxils.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/Planche_ronde1.jpg')
+product3.photo.attach(io: file, filename: 'Planche_ronde1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/Planche_ronde2.jpg')
+product3.cover.attach(io: file, filename: 'Planche_ronde2.jpg', content_type: 'image/jpg')
 puts 'number 3 finished'
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/IMG_7308_irtxd7.jpg')
-product4.photo.attach(io: file, filename: 'IMG_7308_irtxd7.jpg', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/FQHB6877_kvhduv.jpg')
-product4.cover.attach(io: file, filename: 'FQHB6877_kvhduv.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/assiette_la_vita1.jpg')
+product4.photo.attach(io: file, filename: 'assiette_la_vita1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/assiette_la_vita2.jpg')
+product4.cover.attach(io: file, filename: 'assiette_la_vita2.jpg', content_type: 'image/jpg')
 puts 'number 4 finished'
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/BCXJ9342_mdxils.jpg')
-product5.photo.attach(io: file, filename: 'BCXJ9342_mdxils.jpg', content_type: 'image/jpg')
-file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/IGAJ0357_eazdcx.jpg')
-product5.cover.attach(io: file, filename: 'IGAJ0357_eazdcx.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/70_assiette1.jpg')
+product5.photo.attach(io: file, filename: '70_assiette1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/70_assiette2.jpg')
+product5.cover.attach(io: file, filename: '70_assiette2.jpg', content_type: 'image/jpg')
 puts 'number 5 finished'
 puts '...'
 

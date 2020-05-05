@@ -1,9 +1,9 @@
-<div class="container form-container">
+<div class="container form-container" style="margin-top: 100px;">
  <% new_product = Product.new %>
  <%= simple_form_for(new_product) do |f| %>
    <div class="form-top">
     <%= f.input :name, label: 'Nom', placeholder: "Nom du produit" %>
-    <%= f.number_field :price_cents, label: "Prix (en centimes)"%>
+    <%= f.number_field :price_cents, label: "Prix (en centimes)", placeholder: 0%>
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>
     <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description du produit..." %>
     <div class="d-flex">

@@ -3,7 +3,7 @@
  <% new_contact = Contact.new %>
  <%= simple_form_for(new_contact) do |f| %>
    <div class="form-top">
-     <%= f.input :name, label: 'votre nom', placeholder: "Arthur Martin" %>
+     <%= f.input :name, label: 'votre nom', placeholder: "Prénom Nom" %>
      <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
      <%= f.input :message, label: 'Décrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
     </div>

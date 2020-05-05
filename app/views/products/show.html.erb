@@ -14,5 +14,11 @@
       </div>
     </div>
   </div>
-  <%= link_to "Retour à la Boutique", products_path, class: "btn btn-primary" %>
+  <div class="button-diagonal" style="margin: 16px;">
+    <%= link_to products_path do %>
+      <button>Boutique</button>
+    <% end %>
+    <span class="triangle-top-left"></span>
+    <span class="triangle-bottom-right"></span>
+  </div>
 </div>

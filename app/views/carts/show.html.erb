@@ -1,69 +1,58 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
   <% if @line_items.empty? %>
-    <div>
-      <%= link_to "Continuer Shopping", products_path, class: 'btn btn-secondary' %>
+    <div class="button-diagonal">
+      <%= link_to products_path do %>
+        <button>Boutique</button>
+      <% end %>
+      <span class="triangle-top-left"></span>
+      <span class="triangle-bottom-right"></span>
     </div>
   <% else %>
     <div>
-      <%= link_to "Continuer Shopping", products_path, class: "btn btn-primary"%>
-    </div>
-    <div>
-      <div>
-        <h2>
-          <%= "My Cart"%>
-        </h2>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th><%='price'%></th>
-              <th><%='quantity'%></th>
-              <th><%='total'%></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @line_items.each do |line_item| %>
-              <tr>
-                <td>
-                  <%= cl_image_tag line_item.product.photo.key, height: 100, width: 70, crop: :fill, quality: 100, gravity: :auto %>
-                </td>
-                <td>
-                  <%= line_item.product.name %>
-                </td>
-                <td>
-                  <%= line_item.product.price %>
-                </td>
-                <td>
-                <%= link_to 'réduire quantité', line_item_reduce_path(id: line_item), method: :post %>
-                <%= link_to 'ajouter quantité',line_item_add_path(id: line_item), method: :post %>
-                <span>
-                  <%= line_item.quantity %>
-                </span>
-                <span>
-                  <%= line_item.quantity %>
-                </span>
-
-                </td>
-                <td>
-                  <%= humanized_money_with_symbol(line_item.total_price) %>
-                </td>
-                <td>
-                  <%= link_to 'enlever du panier', line_item_path(line_item), method: :delete%>
-                </td>
-              </tr>
+      <h2 style="text-decoration: underline;"><%= "Mon panier :"%></h2><br>
+      <div class="cart-items">
+        <% @line_items.each do |line_item| %>
+          <div class="cart-item">
+            <%= cl_image_tag line_item.product.photo.key%>
+            <%= line_item.product.name %>
+            <p>: </p>
+            <%= line_item.product.price %>
+            <p>  X  </p>
+            <p><%= line_item.quantity %></p>
+            <p>  =  </p>
+            <p><%= (line_item.total_price) %> €</p>
+            <%= link_to line_item_reduce_path(id: line_item), method: :post do %>
+              <i class="fas fa-plus"></i>
             <% end %>
-          </tbody>
-        </table>
-        <%= link_to 'empty_cart', cart_path, method: :delete, data: {confirm: 'are_you_sure?'} %>
+            <%= link_to line_item_add_path(id: line_item), method: :post do %>
+              <i class="fas fa-minus"></i>
+            <% end %>
+            <%= link_to line_item_path(line_item), method: :delete do%>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+          <br>
+        <% end %>
       </div>
-      <span>
-        Total:
-      </span>
-      <span>
-        <%= humanized_money_with_symbol(@cart.sub_total) %>
-      </span>
-      <%= link_to 'order', new_order_path, class: "btn btn-primary"%>
+      <div class="total-amount">
+        <div style="display:flex;">
+          <h4>Total de ma commande :</h4>
+          <h4>  <%= (@cart.sub_total) %> €</h4>
+        </div>
+        <div class="button-diagonal">
+          <%= link_to cart_path, method: :delete, data: {confirm: 'are_you_sure?'} do %>
+            <button>Finaliser</button>
+          <% end %>
+          <span class="triangle-top-left"></span>
+          <span class="triangle-bottom-right"></span>
+        </div>
+      </div>
+      <br>
+      <div style="display:flex; flex-direction: row;">
+        <%= link_to cart_path, method: :delete, data: {confirm: 'are_you_sure?'} do %>
+          <i class="fas fa-trash" style="color: $dark-gray;"></i>
+        <% end %>
+        <p style="color: $dark-gray;"> Videz le panier</p>
+      </div>
   <% end %>
 </div>
