@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   get 'conseil', to: 'pages#conseil'
   get 'event', to: 'pages#event'
   get 'boutique', to: 'pages#boutique'
+  get 'art_table', to: 'pages#art_table'
+  get 'decoration', to: 'pages#decoration'
+  get 'luminaires', to: 'pages#luminaires'
+  get 'linge', to: 'pages#linge'
+  get 'mobilier', to: 'pages#mobilier'
+
+
 
   resources :contacts, only: [:new, :create]
   resources :events
@@ -22,3 +29,4 @@ Rails.application.routes.draw do
   # resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
