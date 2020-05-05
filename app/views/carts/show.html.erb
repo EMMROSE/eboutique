@@ -40,8 +40,8 @@
           <h4>  <%= (@cart.sub_total) %> €</h4>
         </div>
         <div class="button-diagonal">
-          <%= link_to cart_path, method: :delete, data: {confirm: 'are_you_sure?'} do %>
-            <button>Finaliser</button>
+          <%= link_to order_path do %>
+            <button>Commander</button>
           <% end %>
           <span class="triangle-top-left"></span>
           <span class="triangle-bottom-right"></span>

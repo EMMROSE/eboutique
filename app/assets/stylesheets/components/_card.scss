@@ -6,14 +6,38 @@
 }
 .event-card {
   border: 1px solid black;
-  height: 240px; width: 200px;
+  height: 320px; width: 240px;
+  margin-right: 16px;
+  border-radius: 4%;
   img {
-    height: 200px;
+    height: 160px;
     width: 100%;
   }
 }
+// CARD FOR CATEGORY
+.category-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
-// CARD FOR STUDIO
+.category-card {
+  height: 30vh;
+  width: 30vh;
+  border: solid 1px $dark-gray;
+  background-color: $dark-gray;
+  border-radius: 6%;
+  color: white;
+  text-decoration: none;
+  &:hover {
+   text-decoration: none;
+  }
+  a {
+    color: grey;
+    &:hover {color: grey; text-decoration: none;}
+  }
+}
+// CARD FOR STUDIO( CONSEIL)
 
 .studio-cards {
   display: flex;

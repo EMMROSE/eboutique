@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  CATEGORIES = ['art de table', 'décoration', 'luminaires', 'linge de maison', 'mobilier']
+  CATEGORIES = ['art_de_la_table', 'décoration', 'luminaires', 'linge_de_maison', 'mobilier']
   validates :name, presence: true, length: { in: 3...50 }
   validates :price_cents, presence: true, numericality: { greater_than: 0 }
   validates :sku, presence: true, uniqueness: true

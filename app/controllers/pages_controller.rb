@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :conseil, :univers, :event]
+  skip_before_action :authenticate_user!
 
   def home
   end
@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def art_table
-    @products = Product.where(category: 'art de table')
+    @products = Product.where(category: 'art_de_la_table')
   end
 
   def decoration
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   end
 
   def linge
-    @products = Product.where(category: 'linge de maison')
+    @products = Product.where(category: 'linge_de_maison')
   end
 
   def mobilier

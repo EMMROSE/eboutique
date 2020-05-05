@@ -10,11 +10,11 @@ require "open-uri"
 puts 'start seeds...'
 
 Product.destroy_all
-product1 = Product.create({:name=>"Planches", :description=>"Jeux de planches en bois rectangulaires pour décorer votre chemin de table", :sku=>"123456", price_cents: 3200})
-product2 = Product.create({:name=>"Assiette Poisson", :description=>"Assiette à poisson  Bitossi", :sku=>"123457",price_cents: 1500})
-product3 = Product.create({:name=>"Planche ronde", :description=>"Planche ronde en teck (dimension 90cm de diamètre)", :sku=>"123458",price_cents: 5000})
-product4 = Product.create({:name=>"Assiettes", :description=>"Lot de 6 assiettes la Vita é Bella", :sku=>"123459",price_cents: 2400})
-product5 = Product.create({:name=>"Assiette 70's", :description=>"Assiette en terre cuite collection 70's", :sku=>"123450",price_cents: 2500})
+product1 = Product.create({:category=>'mobilier', :name=>"Planches", :description=>"Jeux de planches en bois rectangulaires pour décorer votre chemin de table", :sku=>"123456", price_cents: 3200})
+product2 = Product.create({:category=>'art_de_la_table',:name=>"Assiette Poisson", :description=>"Assiette à poisson  Bitossi", :sku=>"123457",price_cents: 1500})
+product3 = Product.create({:category=>'mobilier',:name=>"Planche ronde", :description=>"Planche ronde en teck (dimension 90cm de diamètre)", :sku=>"123458",price_cents: 5000})
+product4 = Product.create({:category=>'art_de_la_table',:name=>"Assiettes", :description=>"Lot de 6 assiettes la Vita é Bella", :sku=>"123459",price_cents: 2400})
+product5 = Product.create({:category=>'art_de_la_table',:name=>"Assiette 70's", :description=>"Assiette en terre cuite collection 70's", :sku=>"123450",price_cents: 2500})
 puts "Total number of products: #{Product.all.count}"
 file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/samedi28/planche_1.jpg')
 product1.photo.attach(io: file, filename: 'planche_1.jpg', content_type: 'image/jpg')

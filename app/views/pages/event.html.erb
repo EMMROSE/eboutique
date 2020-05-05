@@ -9,9 +9,12 @@
       <div class="event-cards">
         <% @events.each do |event| %>
           <div class="event-card">
-            <h3><%= event.title %></h3>
+            <h5><strong><%= event.title %></strong></h5>
             <span><%= cl_image_tag event.cover.key%></span>
             <p><%= event.description %></p>
+            <% link_to new_event_subscription_path do%>
+              <p>s'inscrire</p>
+            <% end %>
           </div>
         <% end %>
       </div>
@@ -25,7 +28,7 @@
       <% @events = Event.where(upcoming: false).order(created_at: :desc) %>
       <% @events.each do |event| %>
         <div class="event-card">
-          <h3><%= event.title %></h3>
+          <h5><strong><%= event.title %></strong></h5>
           <span><%= cl_image_tag event.cover.key%></span>
           <p><%= event.description %></p>
         </div>

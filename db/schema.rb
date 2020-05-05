@@ -94,9 +94,21 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "photo"
     t.integer "price_cents", default: 0, null: false
     t.string "price_currency", default: "EUR", null: false
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "phone"
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_subscriptions_on_product_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,4 +129,5 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "subscriptions", "products"
 end
