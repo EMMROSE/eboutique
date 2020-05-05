@@ -2,6 +2,7 @@
  <h4>Editez le produit:  <%= @product.name %>(réf n°<%= @product.sku %>)</h4><br>
  <%= simple_form_for(@product) do |f| %>
    <div class="form-top">
+    <%= f.input :category, as: :radio_buttons, collection: ['art de table', 'décoration', 'luminaires', 'linge de maison', 'mobilier'], wrapper: :vertical_collection_inline %>
     <%= f.input :name, label: 'Nom', placeholder: "Nom du produit" %>
     <%= f.number_field :price_cents, label: "Prix (en centimes)"%>
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>

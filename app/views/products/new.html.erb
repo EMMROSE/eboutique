@@ -2,6 +2,7 @@
  <% new_product = Product.new %>
  <%= simple_form_for(new_product) do |f| %>
    <div class="form-top">
+    <%= f.input :category, as: :radio_buttons, collection: ['art de table', 'décoration', 'luminaires', 'linge de maison', 'mobilier'], wrapper: :vertical_collection_inline %>
     <%= f.input :name, label: 'Nom', placeholder: "Nom du produit" %>
     <%= f.number_field :price_cents, label: "Prix (en centimes)", placeholder: 0%>
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>

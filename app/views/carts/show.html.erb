@@ -21,10 +21,10 @@
             <p><%= line_item.quantity %></p>
             <p>  =  </p>
             <p><%= (line_item.total_price) %> €</p>
-            <%= link_to line_item_reduce_path(id: line_item), method: :post do %>
+            <%= link_to line_item_add_path(id: line_item), method: :post do %>
               <i class="fas fa-plus"></i>
             <% end %>
-            <%= link_to line_item_add_path(id: line_item), method: :post do %>
+            <%= link_to line_item_reduce_path(id: line_item), method: :post do %>
               <i class="fas fa-minus"></i>
             <% end %>
             <%= link_to line_item_path(line_item), method: :delete do%>

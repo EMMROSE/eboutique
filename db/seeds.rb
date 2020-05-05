@@ -43,9 +43,12 @@ product5.cover.attach(io: file, filename: '70_assiette2.jpg', content_type: 'ima
 puts 'number 5 finished'
 puts '...'
 
-puts 'Creating articles'
+puts 'Events'
+puts 'Destroying old Events'
 puts '----------------'
-
+Event.destroy_all
+puts 'Creating Events'
+puts '----------------'
 event1 = Event.new(upcoming: true, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
 file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
 event1.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
@@ -54,7 +57,7 @@ event1.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg
 event1.save!
 puts "event n°1 create"
 
-event2 = Event.new(upcoming: true, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+event2 = Event.new(upcoming: true, title: 'Mode 2020', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
 file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
 event2.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
 # file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
@@ -77,7 +80,7 @@ event4.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg
 event4.save!
 puts "event n°4 create"
 
-event5 = Event.new(upcoming: false, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+event5 = Event.new(upcoming: false, title: 'Optimiser votre espace', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
 file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
 event5.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
 # file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')

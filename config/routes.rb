@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'univers', to: 'pages#univers'
-  get 'studio', to: 'pages#studio'
-  get 'atelier', to: 'pages#atelier'
+  get 'conseil', to: 'pages#conseil'
+  get 'event', to: 'pages#event'
+  get 'boutique', to: 'pages#boutique'
 
   resources :contacts, only: [:new, :create]
   resources :events

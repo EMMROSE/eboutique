@@ -1,16 +1,19 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :studio, :univers, :atelier]
+  skip_before_action :authenticate_user!, only: [ :home, :conseil, :univers, :event]
 
   def home
   end
 
-  def studio
+  def boutique
+  end
+
+  def conseil
   end
 
   def univers
   end
 
-  def atelier
+  def event
     @events = Event.order(created_at: :desc)
   end
 end
