@@ -1,0 +1,18 @@
+<div class="container form-container">
+ <h4>Editez le produit:  <%= @product.name %>(réf n°<%= @product.sku %>)</h4><br>
+ <%= simple_form_for(@product) do |f| %>
+   <div class="form-top">
+    <%= f.input :name, label: 'Nom', placeholder: "Nom du produit" %>
+    <%= f.number_field :price_cents, label: "Prix (en centimes)"%>
+    <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>
+    <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description du produit..." %>
+    <div class="d-flex">
+      <%= f.input :cover, label: 'Ajoutez une photo de couverture', as: :file %>
+      <%= f.input :photo, label: 'Ajoutez une seconde photo', as: :file %>
+    </div>
+   </div>
+   <div class="form-button">
+    <%= f.submit "Editez le produit", class: 'btn btn-primary' %>
+   </div>
+ <% end %>
+</div>
