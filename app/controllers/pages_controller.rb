@@ -11,5 +11,6 @@ class PagesController < ApplicationController
   end
 
   def atelier
+    @events = Event.order(created_at: :desc)
   end
 end

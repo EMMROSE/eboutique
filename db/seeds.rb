@@ -42,4 +42,55 @@ file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/s
 product5.cover.attach(io: file, filename: 'IGAJ0357_eazdcx.jpg', content_type: 'image/jpg')
 puts 'number 5 finished'
 puts '...'
+
+puts 'Creating articles'
+puts '----------------'
+
+event1 = Event.new(upcoming: true, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event1.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event1.save!
+puts "event n°1 create"
+
+event2 = Event.new(upcoming: true, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event2.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event2.save!
+puts "event n°2 create"
+event3 = Event.new(upcoming: true, title: 'Apéro & Déco', description:"Découvrer notre nouvelle collection autour d'un verre à l'Atelier 28 le Vendredi 10 Juin (19h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event3.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event3.save!
+puts "event n°3 create"
+
+event4 = Event.new(upcoming: false, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event4.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event4.save!
+puts "event n°4 create"
+
+event5 = Event.new(upcoming: false, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event5.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event5.save!
+puts "event n°5 create"
+
+event6 = Event.new(upcoming: false, title: 'Home Garden', description:"Aménager un jardin dans son appartement, un jeu d'enfant avec nos tutos. Rejoignez-nous à l'Atelier 28 le DImanche 12 Juin (10h00).")
+file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1585089570/atelier/verriere.jpg')
+event6.cover.attach(io: file, filename: 'verriere.jpg', content_type: 'image/jpg')
+# file = URI.open('https://res.cloudinary.com/dwrzyhvzy/image/upload/v1588175369/atelier/article3.jpg')
+# article1.cover.attach(io: file, filename: 'garde.jpg', content_type: 'image/jpg')
+event6.save!
+puts "event n°6 create"
+
 puts 'seeds finished'

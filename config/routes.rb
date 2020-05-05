@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'atelier', to: 'pages#atelier'
 
   resources :contacts, only: [:new, :create]
+  resources :events
 
   resources :products
   resources :orders do

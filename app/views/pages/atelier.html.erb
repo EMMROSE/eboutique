@@ -5,18 +5,27 @@
     </div>
     <div class= "page-atelier-right">
       <h3>Les prochains ateliers à l'Atelier 28</h3>
+      <div>
+        <% @events = Event.where(upcoming: true).order(created_at: :desc) %>
+        <% @events.each do |event| %>
+          <h3><%= event.title %></h3>
+          <p><%= event.description %></p>
+        <% end %>
+      </div>
     </div>
   </div>
   <br>
   <div class="page-atelier-bottom">
-    <h3>Retrouvez également les précédents Ateliers</h3>
+    <h3>Retrouvez également tous les précédents évènements à l'Atelier 28</h3>
     <div class="cards">
-
+      <% @events = Event.where(upcoming: false).order(created_at: :desc) %>
+      <% @events.each do |event| %>
+        <div>
+          <h3><%= event.title %></h3>
+          <p><%= event.description %></p>
+        </div>
+      <% end %>
     </div>
     <br>
-    <h3>Les évènements chez Samedi 28</h3>
-    <div class="cards">
-
-    </div>
   </div>
 </div>
