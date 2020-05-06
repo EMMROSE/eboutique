@@ -179,6 +179,9 @@
     width: 240px;
     margin-top: 32px;
   }
+  .category-cards {
+    flex-direction: column;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)

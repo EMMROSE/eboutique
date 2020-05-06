@@ -59,6 +59,9 @@
   .navbar .nav-items{
     display: none;
   }
+  .navbar {
+    max-width: 375px;
+  }
   .cart {
     i {
       font-size: 24px;

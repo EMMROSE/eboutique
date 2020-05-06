@@ -1,7 +1,6 @@
 <head>
   <style>
   body { margin: 0; padding: 0; }
-  #map { width: 50%; height: 50vh;}
   </style>
   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 </head>
@@ -55,29 +54,34 @@
         <%= link_to event_path do %>
           <button type="button" id="button-home-atelier">Je veux essayer !</button>
         <% end %>
-        <span class="triangle-top-left"></span>
+        <span id="triangle-bottom-left-home-studio"></span>
         <span id="triangle-bottom-right-home-studio"></span>
       </div>
     </div>
   </div>
 </div>
-
-<div>
-  <div class="elfsight-app-a6106147-0ab9-4475-87ed-f762b85f4529"></div>
-</div>
-
-<div class="map_contact" id="map">
-  <script class="map-style">
-    mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY'] %>";
-  var map = new mapboxgl.Map({
-  container: 'map', // container id
-  style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-  center: [6.0470777, 43.1093471], // starting position [lng, lat]
-  zoom: 17 // starting zoom
-  });
-  </script>
-  <div id="contact">
-    <h3>Samedi 28</h3>
-    <h6>ZA Les castors<br>83320 - Carqueiranne</h6>
+<div class= "container mt-3">
+  <div class= "section-home-map">
+    <div id="contact">
+      <h3><strong>Samedi 28</strong></h3>
+      <h6>ZA Les castors</h6>
+      <h6>83320 - Carqueiranne</h6>
+      <h6><i class="fas fa-mobile-alt"></i> 06 71 99 89 56</h6>
+      <h6><i class="fas fa-envelope"></i> boutique@samedi28.com</h6>
+    </div>
+    <div class="map_contact" id="map">
+      <script class="map-style">
+        mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY'] %>";
+      var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+      center: [6.0470777, 43.1093471], // starting position [lng, lat]
+      zoom: 17 // starting zoom
+      });
+      </script>
+    </div>
+  </div>
+  <div>
+    <div class="elfsight-app-a6106147-0ab9-4475-87ed-f762b85f4529"></div>
   </div>
 </div>
