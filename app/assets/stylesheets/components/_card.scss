@@ -18,23 +18,25 @@
 .category-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .category-card {
-  height: 30vh;
-  width: 30vh;
+  height: 40vh;
+  width: 40vh;
+  margin: 16px;
   border: solid 1px $dark-gray;
   background-color: $dark-gray;
   border-radius: 6%;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   text-decoration: none;
-  &:hover {
-   text-decoration: none;
-  }
-  a {
-    color: grey;
-    &:hover {color: grey; text-decoration: none;}
+  a  {
+    color: white;
+    &:hover {color: white; text-decoration: none;}
   }
 }
 // CARD FOR STUDIO( CONSEIL)
