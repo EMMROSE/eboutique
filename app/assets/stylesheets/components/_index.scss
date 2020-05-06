@@ -29,7 +29,7 @@ h2 {
   width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: center;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -51,8 +51,9 @@ h2 {
 .univers-right {
   flex-basis: 50%;
   img {
-    width: 100%;
+    width: 60%;
     max-width: 300px;
+    height: 300px;
   }
 }
 //CSS for Section boutique into home page
@@ -77,6 +78,7 @@ h2 {
     position: absolute;
     top: 35%;
     right: 40%;
+    color: $dark-gray;
   }
 }
 .boutique-right {
@@ -110,7 +112,7 @@ h2 {
     color: $dark-gray;
   }
 }
-//CSS for atelier page
+//CSS for atelier page (event page)
 .page-atelier {
   display: flex;
   flex-direction: row;
@@ -162,10 +164,6 @@ h2 {
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .section-home {
-    display: flex;
-    flex-direction: column;
-  }
   .home-atelier-right {
     flex-basis: 50%;
     border: solid 2px $gray;
@@ -180,8 +178,46 @@ h2 {
       color: $dark-gray;
     }
   }
-  .map_contact {
-    display: flex;
-    flex-direction: column;
+  .univers-left {
+    flex-basis: 50%;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 505px;
+    }
+  }
+  .univers-right {
+    flex-basis: 50%;
+    img {
+      width: 60%;
+      height: 60%;
+    }
+  }
+  .boutique-left {
+    img {
+      position: absolute;
+      top: 40px; right: 0px;
+    }
+    h2 {
+      position: absolute;
+      top: 25%;
+      right: 40%;
+      font-size: 24px;
+    }
+  }
+  .home-atelier-right {
+    height: 148px;
+    width: 60%;
+    padding: 15px;
+    margin-top: 0;
+    color: $gray;
+    width: 150px;
+    h2 {
+      font-size : 16px;
+      font-weight: bold;
+    }
+    h4 {
+      font-size : 12px;
+    }
   }
 }

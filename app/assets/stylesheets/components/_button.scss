@@ -79,4 +79,35 @@
     margin-left: 24%;
     margin-top: 12px;
   }
+  .button-diagonal {
+    button {
+      height: 30px;
+      width: 120px;
+      border: solid 6px $dark-gray;
+      background-color: $lighter-gray;
+      font-color: $dark-gray;
+      font-size: 12px;
+    }
+    .triangle-bottom-right {
+      position: absolute;
+      bottom: 0px; left: 110px;
+    }
+  }
+  #button-home-boutique {
+    button {
+      width: 180px;
+      font-size: 9px;
+    }
+  }
+  #button-home-atelier {
+    width: 120px;
+  }
+  #triangle-bottom-right-home-boutique {
+    position: absolute;
+    bottom: 0px; left: 170px;
+  }
+  #triangle-bottom-right-home-studio {
+    position: absolute;
+    bottom: 0px; left: 110px;
+  }
 }
