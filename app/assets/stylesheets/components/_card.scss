@@ -8,10 +8,15 @@
   border: 1px solid black;
   height: 320px; width: 240px;
   margin-right: 16px;
+  margin-top: 16px;
   border-radius: 4%;
+  color: $dark-gray;
   img {
     height: 160px;
     width: 100%;
+  }
+  h5 {
+    text-align: center;
   }
 }
 // CARD FOR CATEGORY

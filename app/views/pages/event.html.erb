@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;">
-  <div class="atelier">
+  <div class="page-atelier">
     <div class= "atelier-left">
       <img src="assets/atelier-left.png" alt="">
     </div>
@@ -12,9 +12,7 @@
             <h5><strong><%= event.title %></strong></h5>
             <span><%= cl_image_tag event.cover.key%></span>
             <p><%= event.description %></p>
-            <% link_to new_event_subscription_path do%>
-              <p>s'inscrire</p>
-            <% end %>
+            <a href="new_event_subscription_path(event)">s'inscrire</a>
           </div>
         <% end %>
       </div>

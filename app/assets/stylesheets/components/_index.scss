@@ -120,7 +120,7 @@ h2 {
 .page-atelier {
   display: flex;
   flex-direction: row;
-  padding: 10px 50px;
+  padding: 10px 30px;
   margin-top: 20px;
 }
 .page-atelier-right {
@@ -253,5 +253,9 @@ h2 {
   #map {
   width: 100%;
   height: 50vh;
+  }
+  .page-atelier {
+    flex-direction: column;
+    padding: 10px 10px;
   }
 }
