@@ -44,6 +44,11 @@
 #button-home-atelier {
   width: 230px;
 }
+#button-home-boutique {
+  button {
+    width: 280px;
+  }
+}
 #triangle-bottom-right-home-studio {
   position: absolute;
   bottom: 0px; left: 220px;
@@ -56,6 +61,17 @@
   border-color: transparent transparent white transparent;
 }
 
+#triangle-bottom-right-home-boutique {
+  position: absolute;
+  bottom: 0px; left: 270px;
+  z-index:9;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent $light-gray transparent;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

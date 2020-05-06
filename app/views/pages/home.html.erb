@@ -27,9 +27,15 @@
 <div class= "container">
   <div class="section-home">
     <div class= "boutique-left">
-      <%= link_to products_path do%>
-        <img src="assets/boutique-left.png" alt="">
-      <% end %>
+      <img src="assets/boutique-left.png" alt="">
+      <h2>E-SHOP</h2>
+      <div class="button-diagonal" id="button-home-boutique">
+        <%= link_to boutique_path do %>
+          <button>Je veux voir à quoi ça ressemble</button>
+        <% end %>
+        <span class="triangle-top-left"></span>
+        <span id="triangle-bottom-right-home-boutique"></span>
+      </div>
     </div>
     <div class= "boutique-right">
       <img src="assets/boutique-right.png" alt="">
