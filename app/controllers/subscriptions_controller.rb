@@ -2,7 +2,7 @@ class SubscriptionsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @subscription = Subscription.new()
+    @subscription = Subscription.new
     @event = Event.find(params[:event_id])
   end
 
@@ -11,8 +11,8 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
     @subscription.event = @event
     if @subscription.save
-      subscriptionMailer.general_message(@subscription).deliver_now
-      redirect_to atelier_path
+      # subscriptionMailer.general_message(@subscription).deliver_now
+      redirect_to event_path
       flash[:notice] = "Votre inscription a bien été enregistrée."
     else
       render :new
