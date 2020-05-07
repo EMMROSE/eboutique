@@ -23,11 +23,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    if current_user
-      @order = current_user.orders.find(params[:id])
-    else
-      @order = Order.find(params[:id])
-    end
+    # if current_user
+    #   @order = current_user.orders.find(params[:id])
+    # else
+    @order = Order.find(params[:id])
+    # end
   end
 
   def index
