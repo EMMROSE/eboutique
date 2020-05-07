@@ -11,15 +11,11 @@ Rails.application.routes.draw do
   get 'luminaires', to: 'pages#luminaires'
   get 'linge', to: 'pages#linge'
   get 'mobilier', to: 'pages#mobilier'
-
   get 'admin', to: 'pages#admin'
 
-
-
   resources :contacts, only: [:new, :create]
-  resources :events do
-    resources :subscription, only: :create
-  end
+  resources :events
+  resources :subscription
 
   resources :products
   resources :orders do

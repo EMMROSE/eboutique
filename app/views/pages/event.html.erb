@@ -12,7 +12,7 @@
             <h5><strong><%= event.title %></strong></h5>
             <span><%= cl_image_tag event.cover.key%></span>
             <p><%= event.description %></p>
-            <%= link_to "S'inscrire", new_event_subscription_path(event_id: event.id)%>
+            <%= link_to "S'inscrire", new_subscription_path(event)%>
           </div>
         <% end %>
       </div>

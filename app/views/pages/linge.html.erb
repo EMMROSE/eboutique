@@ -2,16 +2,20 @@
   <% @products.each do |product| %>
     <div class="wrapper">
       <div class="top">
-        <span><%= cl_image_tag product.photo.key, class: "front-picture"%></span>
-        <span><%= cl_image_tag product.cover.key, class: "back-picture"%></span>
+        <%= link_to product_path(product) do %>
+          <span><%= cl_image_tag product.photo.key, class: "front-picture"%></span>
+          <span><%= cl_image_tag product.cover.key, class: "back-picture"%></span>
+        <% end %>
       </div>
       <div class="bottom">
-        <div>
+        <div style="display:flex;">
           <h3><%= product.name %></h3>
-          <h5><%= product.price %>€</h5>
+          <%= link_to link_to line_items_path(product_id: product.id), method: :post do %>
+            <i class="fas fa-cart-plus" id="icone"></i>
+          <% end %>
         </div>
-        <div>
-          <a href="#"><i class="fas fa-cart-plus"></i></a>
+        <div style="display:flex;">
+          <h5><%= product.price %>€</h5>
           <h5><%= link_to "en savoir +", product_path(product) %></h5>
         </div>
       </div>

@@ -1,10 +1,10 @@
 class SubscriptionsController < ApplicationController
   skip_before_action :authenticate_user!
 
-  # def new
-  #   @subscription = Subscription.new()
-  #   @event = Event.find(params[:event_id])
-  # end
+  def new
+    @subscription = Subscription.new()
+    @event = Event.find(params[:event_id])
+  end
 
   def create
     @event = Event.find(params[:event_id])

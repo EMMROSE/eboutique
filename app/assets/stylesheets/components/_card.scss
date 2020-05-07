@@ -145,19 +145,22 @@
 .bottom {
   padding: 0px 10px 10px 10px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
   text-decoration: none;
-  i {
+  #icone {
     font-size: 24px;
     color: grey;
     position: absolute;
-    bottom: 54px; left: 260px;
+    bottom: 32px; right: 10px;
   }
   a  {
     color: grey;
     &:hover {color: grey; text-decoration: none;}
+    position: absolute;
+    bottom: 20px; right: 10px;
   }
 }
 
@@ -171,7 +174,7 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .studio-cards {
     flex-direction: column;
@@ -188,6 +191,29 @@
   }
   .category-cards {
     flex-direction: column;
+  }
+// responsive for product cards
+  .wrapper {
+    width: 150px;
+    height: 210px;
+    &:hover {
+      box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
+    }
+  }
+
+  .bottom {
+    padding: 0px 5px 10px 10px;
+    h3 {font-size: 1rem;}
+    h5 {font-size: 0.75rem;}
+    #icone {
+      font-size: 16px;
+      position: absolute;
+      bottom: 23px; right: 0px;
+    }
+    a  {
+      position: absolute;
+      bottom: 19px; right: 5px;
+    }
   }
 }
 
