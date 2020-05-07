@@ -1,0 +1,72 @@
+<div class="container" style="margin-top: 100px;">
+  <h1>Les produits</h1>
+  <div>
+    <a href="<%=new_product_path%>" class="btn btn-primary">Nouveau Produit</a>
+    <br>
+    <p>Rechercher un produit :</p>
+    <div class="search mt-2">
+      <%= form_tag products_path, method: :get, novalidate: "novalidate", class: "simple_form search"  do %>
+        <div class="search-form-control form-group mt-1 mb-0">
+          <%= text_field_tag :query,
+              params[:query],
+              class: "search-input form-control string required",
+              id: "search_query",
+              placeholder: "Effectuer une recherche par nom ou par n° de référence",
+              value: ""
+          %>
+          <%= button_tag(type: "submit", class: "btn btn-flat") do %>
+            <i class="fas fa-search"></i> Search
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <h1>Les Ateliers et Evènements</h1>
+  <h3>Créer un évènement </h3> <a href="<%=new_event_path%>" class="btn btn-primary">Nouvel Evènement</a>
+  <br>
+  <h3>En cours :</h3>
+  <% @events = Event.where(upcoming: true).order(created_at: :desc) %>
+  <div class="event-cards">
+    <% @events.each do |event| %>
+      <div class="event-card">
+        <h5><strong><%= event.title %></strong></h5>
+        <span><%= cl_image_tag event.cover.key%></span><br>
+        <ul>
+          <%= link_to edit_event_path(event), class: "py-2 px-4 ml-2 bd-highlight bg-light rounded" do %>
+            <i class="fas fa-pencil-alt"></i> Edit
+          <% end %>
+          <%= link_to event_path(event), method: :delete, class: "py-2 px-4 ml-2 bd-highlight bg-light rounded",data: { confirm: "Etes vous sûre ?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <h3>Passés :</h3>
+    <div class="event-cards">
+      <% @events = Event.where(upcoming: false).order(created_at: :desc) %>
+      <% @events.each do |event| %>
+        <div class="event-card">
+          <h5><strong><%= event.title %></strong></h5>
+          <span><%= cl_image_tag event.cover.key%></span><br>
+          <ul>
+            <%= link_to edit_event_path(event), class: "py-2 px-4 ml-2 bd-highlight bg-light rounded" do %>
+              <i class="fas fa-pencil-alt"></i> Edit
+            <% end %>
+            <%= link_to event_path(event), method: :delete, class: "py-2 px-4 ml-2 bd-highlight bg-light rounded",data: { confirm: "Etes vous sûre ?" } do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  <h1>Mes commandes</h1>
+  <% @order = Order.all %>
+  <% @order.each do |order| %>
+    <p><%= order.email %></p>
+    <p><%= order.status %></p>
+    <p><%= order.amount_cents %></p>
+  <% end %>
+</div>

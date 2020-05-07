@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   get 'linge', to: 'pages#linge'
   get 'mobilier', to: 'pages#mobilier'
 
+  get 'admin', to: 'pages#admin'
+
 
 
   resources :contacts, only: [:new, :create]
   resources :events do
-    resources :subscription, only: :new
+    resources :subscription, only: :create
   end
 
   resources :products
