@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
   resources :events
-  resources :subscription
+  resources :subscriptions
 
   resources :products
   resources :orders do
