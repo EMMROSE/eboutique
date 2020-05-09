@@ -1,14 +1,18 @@
 <!-- app/views/contacts/new.html.erb -->
-<div class="container form-container" style="margin-top: 100px;">
- <% new_contact = Contact.new %>
- <%= simple_form_for(new_contact) do |f| %>
-   <div class="form-top">
-     <%= f.input :name, label: 'votre nom', placeholder: "Prénom Nom" %>
-     <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
-     <%= f.input :message, label: 'Décrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
-    </div>
-   <div class="form-button">
-    <%= f.submit "Soumettre", class: 'btn btn-primary' %>
-   </div>
- <% end %>
+<div style="display:flex; justify-content: center;">
+  <div class="form-container" style="margin-top: 100px;">
+   <% new_contact = Contact.new %>
+   <%= simple_form_for(new_contact) do |f| %>
+     <div class="form-top">
+       <%= f.input :name, label: 'votre nom', placeholder: "Prénom Nom" %>
+       <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
+       <%= f.input :message, label: 'Décrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
+      </div>
+     <div class="form-button button-diagonal">
+       <button><%= f.submit "Soumettre"%></button>
+      <span class="triangle-top-left"></span>
+      <span class="triangle-bottom-right"></span>
+     </div>
+   <% end %>
+  </div>
 </div>

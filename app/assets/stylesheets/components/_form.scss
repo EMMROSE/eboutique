@@ -1,0 +1,40 @@
+.form-container {
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  background-image: url(/assets/wall.jpg);
+  box-shadow: 0 0 50px rgba(133,125,122,0.8);
+  padding: 16px;
+  color: $dark-gray;
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: rgba(255,255,255,0.5);
+  width: 80%;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .form-container {
+    width: 70%;
+    height: 50%;
+    padding: 32px;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
