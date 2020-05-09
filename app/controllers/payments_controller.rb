@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
 
   def new
     if current_user
-      @order = current_user.orders.where(status: 'pending').find(params[:order_id])
+      @order = current_user.orders.where(state: 'pending').find(params[:order_id])
     else
       @order = Order.find(params[:order_id])
     end
