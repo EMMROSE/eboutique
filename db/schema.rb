@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "state"
+    t.string "status"
     t.string "email"
     t.string "address"
     t.string "zip_code"
@@ -105,10 +105,10 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "lastname"
     t.string "email"
     t.string "phone"
-    t.bigint "product_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_subscriptions_on_product_id"
+    t.index ["event_id"], name: "index_subscriptions_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -129,5 +129,5 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "subscriptions", "products"
+  add_foreign_key "subscriptions", "events"
 end

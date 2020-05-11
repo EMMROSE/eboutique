@@ -1,11 +1,12 @@
 <div class="container form-container" style="margin-top: 100px;">
-  <h4><%= @subscription.event.title %></h4>
-  <%= simple_form_for(@subscription, @event) do |f| %>
+  <h4>Inscription à <%= @event.title %></h4>
+  <%= simple_form_for(@subscription) do |f| %>
     <div class="form-top">
       <%= f.input :firstname, label: 'votre prénom', placeholder: "Prénom" %>
       <%= f.input :lastname, label: 'votre nom', placeholder: "Nom de famille" %>
       <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
-      <%= f.input :phone, label: 'n° de téléphone', as: :text, placeholder: "0102030405" %>
+      <%= f.input :phone, label: 'n° de téléphone', placeholder: "0102030405" %>
+      <%= f.hidden_field :event_id, value: @event.id %>
     </div>
     <div class="form-button">
       <%= f.submit "Soumettre", class: 'btn btn-primary' %>

@@ -7,9 +7,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @event = Event.find(params[:event_id])
+    # @event = Event.find(params[:event_id])
     @subscription = Subscription.new(subscription_params)
-    @subscription.event = @event
+    # @subscription.event = @event
     if @subscription.save
       # subscriptionMailer.general_message(@subscription).deliver_now
       redirect_to event_path
@@ -23,6 +23,6 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit(:firstname, :lastname, :email, :phone)
+    params.require(:subscription).permit(:firstname, :lastname, :email, :phone, :event_id)
   end
 end

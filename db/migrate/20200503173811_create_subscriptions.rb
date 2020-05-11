@@ -5,7 +5,7 @@ class CreateSubscriptions < ActiveRecord::Migration[6.0]
       t.string :lastname
       t.string :email
       t.string :phone
-      t.references :product, null: false, foreign_key: true
+      t.references :event, null: false, foreign_key: true
 
       t.timestamps
     end
