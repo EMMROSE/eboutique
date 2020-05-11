@@ -1,0 +1,90 @@
+// CSS STYLE FOR EVENT PAGE & HOME PAGE
+
+//CSS for Section atelier into home page
+
+.home-atelier-left {
+  flex-basis: 50%;
+  img {
+    width: 100%;
+    max-width: 505px;
+  }
+}
+.home-atelier-right {
+  flex-basis: 50%;
+  border: solid 3px $gray;
+  height: 320px;
+  width: 60%;
+  max-width: 380px;
+  text-align: left;
+  padding: 50px;
+  margin-top: 108px;
+  color: $gray;
+  h1, h2, h4{
+    color: $dark-gray;
+  }
+}
+//CSS for atelier page (event page)
+.page-atelier {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 30px;
+  margin-top: 20px;
+}
+.page-atelier-left {
+  flex-basis: 50%;
+  img {
+    width: 100%;
+    max-width: 505px;
+  }
+}
+.page-atelier-right {
+  flex-basis: 50%;
+  margin-left: 20px;
+  text-align: left;
+  color: $gray;
+  h1, h2, h3{
+    color: $dark-gray;
+  }
+}
+.page-atelier-bottom {
+  h1, h2, h3{
+    color: $dark-gray;
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .home-atelier-right {
+    height: 138px;
+    width: 60%;
+    padding: 15px 0px 0px 15px;
+    margin-top:30px;
+    color: $gray;
+    width: 150px;
+    h2 {
+      font-size : 16px;
+      font-weight: bold;
+    }
+    h4 {
+      font-size : 12px;
+    }
+  }
+  .home-atelier-left img {
+      width: 80%;
+      max-width: 176px;
+  }
+  .page-atelier {
+    flex-direction: column;
+    padding: 10px 10px;
+    justify-content: center;
+  }
+  .page-atelier-left {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 80%;
+      max-width: 505px;
+    }
+  }
+}

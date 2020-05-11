@@ -1,5 +1,6 @@
 // Import your components CSS files here.
 @import "alert";
+@import "atelier";
 @import "avatar";
 @import "button";
 @import "card";
@@ -12,7 +13,9 @@
 .content-wrapper {
   min-height: calc(100vh - 70px - 80px);
 }
-
+// .body {
+//   max-width: 100%!important;
+// }
 h2 {
   color: black;
   text-decoration: none;
@@ -94,50 +97,7 @@ h2 {
     max-width: 505px;
   }
 }
-//CSS for Section atelier into home page
 
-.atelier-left {
-  flex-basis: 50%;
-  img {
-    width: 100%;
-    max-width: 505px;
-  }
-}
-.home-atelier-right {
-  flex-basis: 50%;
-  border: solid 2px $gray;
-  height: 320px;
-  width: 60%;
-  max-width: 380px;
-  text-align: left;
-  padding: 50px;
-  margin-top: 108px;
-  color: $gray;
-  h1, h2, h4{
-    color: $dark-gray;
-  }
-}
-//CSS for atelier page (event page)
-.page-atelier {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 30px;
-  margin-top: 20px;
-}
-.page-atelier-right {
-  flex-basis: 50%;
-  margin-left: 20px;
-  text-align: left;
-  color: $gray;
-  h1, h2, h3{
-    color: $dark-gray;
-  }
-}
-.page-atelier-bottom {
-  h1, h2, h3{
-    color: $dark-gray;
-  }
-}
 
 .map-style {
   height: 20vh;
@@ -185,20 +145,7 @@ h2 {
       width: 130px;
     }
   }
-  .home-atelier-right {
-    flex-basis: 50%;
-    border: solid 2px $gray;
-    height: 320px;
-    width: 50%;
-    max-width: 360px;
-    text-align: left;
-    padding: 50px;
-    margin-top: 108px;
-    color: $gray;
-    h1, h2, h4{
-      color: $dark-gray;
-    }
-  }
+
   .univers-left {
     flex-basis: 50%;
     img {
@@ -231,21 +178,7 @@ h2 {
       width: 130px;
     }
   }
-  .home-atelier-right {
-    height: 138px;
-    width: 60%;
-    padding: 15px 0px 0px 15px;
-    margin-top: 0;
-    color: $gray;
-    width: 150px;
-    h2 {
-      font-size : 16px;
-      font-weight: bold;
-    }
-    h4 {
-      font-size : 12px;
-    }
-  }
+
   .section-home-map {
     display: flex;
     flex-direction: column;
@@ -254,9 +187,5 @@ h2 {
   #map {
   width: 100%;
   height: 50vh;
-  }
-  .page-atelier {
-    flex-direction: column;
-    padding: 10px 10px;
   }
 }

@@ -52,7 +52,7 @@
     z-index: 3;
   }
   i {
-    margin: 20px;
+    margin: 32px 16px 0px 10px;
     font-size: 32px;
     color: $dark-gray;
     position: relative;
@@ -71,6 +71,7 @@
   .cart {
     i {
       font-size: 24px;
+      margin: 32px 16px 0px 10px;
     }
     p {
       width: 15px;

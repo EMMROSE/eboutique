@@ -1,6 +1,6 @@
 <div class="container" style="margin-top: 100px;">
   <div class="page-atelier">
-    <div class= "atelier-left">
+    <div class= "page-atelier-left">
       <img src="assets/atelier-left.png" alt="">
     </div>
     <div class= "page-atelier-right">
@@ -8,7 +8,7 @@
       <% @events = Event.where(upcoming: true).order(created_at: :desc) %>
       <div class="event-cards">
         <% @events.each do |event| %>
-          <div class="event-card">
+          <div class="event-card" id="event-card-height">
             <h5><strong><%= event.title %></strong></h5>
             <span><%= cl_image_tag event.cover.key%></span>
             <p><%= event.description %></p>
@@ -22,7 +22,7 @@
   <br>
   <div class="page-atelier-bottom">
     <h3>Retrouvez également tous les précédents évènements à l'Atelier 28</h3>
-    <div class="cards">
+    <div class="old-event-cards">
       <% @events = Event.where(upcoming: false).order(created_at: :desc) %>
       <% @events.each do |event| %>
         <div class="event-card">
@@ -31,12 +31,12 @@
           <p><%= event.description %></p>
         </div>
       <% end %>
-      <div class="button-diagonal" id="button-home-univers">
+      <div class="button-diagonal" id="button-home-event">
         <%= link_to root_path do %>
           <button>Accueil</button>
         <% end %>
         <span class="triangle-top-left"></span>
-        <span class="triangle-bottom-right"></span>
+        <span class="triangle-bottom-right" id="triangle-bottom-right-event"></span>
       </div>
     </div>
     <br>
