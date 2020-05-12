@@ -6,7 +6,6 @@
   flex-basis: 50%;
   img {
     width: 100%;
-    max-width: 505px;
   }
 }
 .home-atelier-right {
@@ -69,10 +68,7 @@
       font-size : 12px;
     }
   }
-  .home-atelier-left img {
-      width: 80%;
-      max-width: 176px;
-  }
+
   .page-atelier {
     flex-direction: column;
     padding: 10px 10px;

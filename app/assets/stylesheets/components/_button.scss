@@ -3,12 +3,15 @@
   button {
     height: 60px;
     width: 220px;
-    border: solid 12px $dark-gray;
+    border: solid 9px $dark-gray;
     background-color: $lighter-gray;
     font-color: $dark-gray;
     font-size: 16px;
+    font-family: "Maven Pro", "sans-serif";
+    font-weight: bold;
     z-index:1;
     position: relative;
+  &:hover { background-color: $dark-gray; color: white; border: solid 9px $black-coral;}
   }
   .triangle-top-left {
       position: absolute;
@@ -46,7 +49,7 @@
 }
 #button-home-boutique {
   button {
-    width: 280px;
+    width: 283px;
   }
 }
 #button-home-event {
@@ -77,7 +80,7 @@
 
 #triangle-bottom-right-home-boutique {
   position: absolute;
-  bottom: 0px; left: 270px;
+  bottom: 0px; left: 273px;
   z-index:9;
   display: inline-block;
   width: 0;
@@ -98,7 +101,7 @@
     border: solid 7px #373A45;
     background-color: $lighter-gray;
     font-color: $dark-gray;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 // Smallest device

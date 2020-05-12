@@ -1,4 +1,4 @@
-.navbar-lewagon {
+.navbar-style {
   justify-content: space-between;
   background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
@@ -6,7 +6,7 @@
   flex-direction: row;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-style .navbar-collapse {
   flex-grow: 0;
 }
 
@@ -29,7 +29,7 @@
   a {
     color: black;
     text-decoration: none;
-    font-family: "Maven Pro";
+    font-family: $headers-font;
   }
 }
 
