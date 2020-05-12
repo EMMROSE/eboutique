@@ -1,6 +1,6 @@
-class CreateSubscriptions < ActiveRecord::Migration[6.0]
+class CreateEventSubscriptions < ActiveRecord::Migration[6.0]
   def change
-    create_table :subscriptions do |t|
+    create_table :event_subscriptions do |t|
       t.string :firstname
       t.string :lastname
       t.string :email

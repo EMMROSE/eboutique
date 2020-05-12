@@ -1,14 +1,14 @@
-class SubscriptionsController < ApplicationController
+class EventSubscriptionsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
-    @subscription = Subscription.new
+    @subscription = EventSubscription.new
     @event = Event.find(params[:event_id])
   end
 
   def create
     # @event = Event.find(params[:event_id])
-    @subscription = Subscription.new(subscription_params)
+    @subscription = EventSubscription.new(event_subscription_params)
     # @subscription.event = @event
     if @subscription.save
       # subscriptionMailer.general_message(@subscription).deliver_now
@@ -22,7 +22,7 @@ class SubscriptionsController < ApplicationController
 
   private
 
-  def subscription_params
-    params.require(:subscription).permit(:firstname, :lastname, :email, :phone, :event_id)
+  def event_subscription_params
+    params.require(:event_subscription).permit(:firstname, :lastname, :email, :phone, :event_id)
   end
 end

@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   validates :title, presence: true, length: { in: 3...50 }
   validates :description, presence: true
 
-  has_many :subcriptions, dependent: :destroy
+  has_many :event_subcriptions, dependent: :destroy
 end

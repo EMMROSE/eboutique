@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "event_subscriptions", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "phone"
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_subscriptions_on_event_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "cover"
@@ -101,17 +112,6 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "cover"
   end
 
-  create_table "subscriptions", force: :cascade do |t|
-    t.string "firstname"
-    t.string "lastname"
-    t.string "email"
-    t.string "phone"
-    t.bigint "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_subscriptions_on_event_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -126,9 +126,9 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "carts", "users"
+  add_foreign_key "event_subscriptions", "events"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "subscriptions", "events"
 end
