@@ -7,12 +7,17 @@
     </div>
     <div class= "product-description">
       <div class= "description">
-        <h1 class="text-truncate"><%= @product.name %></h1>
+        <h3 id="brand"><%= @product.brand %></h3>
+        <h1><%= @product.name %></h1>
         <h3><%= @product.description %></h3>
       </div>
       <div class= "price">
         <h3><%= @product.price%>€</h3>
-        <%= link_to "Ajoutez à votre panier", line_items_path(product_id: @product.id), method: :post, class: "btn btn-primary" %>
+        <div id="button-product-show">
+          <%= link_to line_items_path(product_id: @product.id), method: :post do %>
+            <button>Ajoutez à votre panier</button>
+          <% end %>
+        </div>
       </div>
       <div>
         <% if user_signed_in? %>
@@ -29,11 +34,5 @@
       </div>
     </div>
   </div>
-  <div class="button-diagonal" style="margin: 16px;">
-    <%= link_to products_path do %>
-      <button>Boutique</button>
-    <% end %>
-    <span class="triangle-top-left"></span>
-    <span class="triangle-bottom-right"></span>
-  </div>
+  <%= link_to "retour à la boutique", :back, style:"color: black;" %>
 </div>

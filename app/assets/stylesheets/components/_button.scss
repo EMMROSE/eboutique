@@ -91,6 +91,16 @@
   top: 50px; right: 0px;
 }
 
+#button-product-show {
+  button {
+    height: 48px;
+    width: 199px;
+    border: solid 7px #373A45;
+    background-color: $lighter-gray;
+    font-color: $dark-gray;
+    font-size: 16px;
+  }
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   #button-diagonal-studio {

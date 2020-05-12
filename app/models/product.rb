@@ -1,10 +1,10 @@
 class Product < ApplicationRecord
   CATEGORIES = ['art_de_la_table', 'décoration', 'luminaires', 'linge_de_maison', 'mobilier']
-  validates :name, presence: true, length: { in: 3...16 }
+  validates :name, presence: true, length: { in: 3...30 }
   validates :price_cents, presence: true, numericality: { greater_than: 0 }
   validates :sku, presence: true, uniqueness: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
-
+  validates :brand, presence: true
   monetize :price_cents
 
   has_many :line_items, dependent: :destroy

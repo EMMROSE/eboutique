@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :photo
       t.monetize :price
       t.string :category
+      t.string :brand
 
       t.timestamps
     end
