@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   devise_for :users
   root to: 'pages#home'
   get 'univers', to: 'pages#univers'
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
   resources :carts
   post 'without_login', to: 'orders#without_login'
 
-  mount StripeEvent::Engine, at: '/stripe-webhooks'
   # resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
