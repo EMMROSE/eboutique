@@ -7,11 +7,9 @@ class EventSubscriptionsController < ApplicationController
   end
 
   def create
-    # @event = Event.find(params[:event_id])
     @subscription = EventSubscription.new(event_subscription_params)
-    # @subscription.event = @event
     if @subscription.save
-      # subscriptionMailer.general_message(@subscription).deliver_now
+      SubscriptionMailer.confirmation(@subscription).deliver_now
       redirect_to event_path
       flash[:notice] = "Votre inscription a bien été enregistrée."
     else

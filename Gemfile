@@ -67,4 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'money-rails'
 gem 'stripe'
-
+#POSTMARK TO SEND EMAIL
+gem 'postmark-rails'
+#to send email on development (don’t really send emails)
+gem 'letter_opener', group: :development
