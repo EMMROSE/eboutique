@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
   <div class="row py-4">
     <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+      <h1>Order n°<%= @order.id %> <small><%= @order.status %></small></h1>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
@@ -9,5 +9,12 @@
       </ul>
       <p>Estimated delivery in <strong>2 business days</strong></p>
     </div>
+  </div>
+  <div class="button-diagonal" id="button-home-univers">
+    <%= link_to root_path do %>
+      <button>Accueil</button>
+    <% end %>
+    <span class="triangle-top-left"></span>
+    <span class="triangle-bottom-right"></span>
   </div>
 </div>

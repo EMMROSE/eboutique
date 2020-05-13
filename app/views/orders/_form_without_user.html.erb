@@ -1,21 +1,22 @@
 <%= simple_form_for @order do |f| %>
-  <%= f.input :email, label: false, placeholder: 'email' %>
-  <%= f.input :address, label: false, placeholder: 'address' %>
-  <%= f.input :zip_code, label: false, placeholder: 'zip_code' %>
-  <%= f.input :city, label: false, placeholder: 'city' %>
-
- <div>
-  <h2>
-    <%= 'checkout' %>
-  </h2>
+  <div class="form-top">
+    <%= f.input :email, label: false, placeholder: 'email' %>
+    <%= f.input :address, label: false, placeholder: 'address' %>
+    <%= f.input :zip_code, label: false, placeholder: 'zip_code' %>
+    <%= f.input :city, label: false, placeholder: 'city' %>
+  </div>
   <div>
     <span>
-      Total:
+      Total de votre commande:
     </span>
     <span>
-      <%= @cart.sub_total %>
+      <%= @cart.sub_total %> €
     </span>
   </div>
-    <%= f.submit 'pay', class: 'btn btn-primary' %>
-</div>
+  <div class="button-diagonal" id="button-home-univers">
+    <%= f.submit 'régler'%>
+    <span class="triangle-top-left"></span>
+    <span class="triangle-bottom-right"></span>
+  </div>
 <% end %>
+
