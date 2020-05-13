@@ -1,0 +1,18 @@
+<p>Bonjour,</p>
+<br>
+<p>Votre commande n° <%= @order.id %> est confirmée.</p>
+<p>Détails :</p>
+<ul>
+  <% @order.line_items each do |item| %>
+    <li><%= item.quantity %> X <%= item.product.name %></li>
+  <% end %>
+</ul>
+<p>--------------------------------</p>
+<p>Total de votre commande: <%= @order.amount %> €.</p>
+<p>Nous restons à votre disposition.</p>
+<br>
+<h3><strong>Samedi 28</strong></h3>
+<p>ZA Les castors</p>
+<p>83320 - Carqueiranne</p>
+<p><i class="fas fa-mobile-alt"></i> 06 71 99 89 56</p>
+<p><i class="fas fa-envelope"></i> boutique@samedi28.com</p>
