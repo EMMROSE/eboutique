@@ -1,7 +1,7 @@
 <div class="container form-container" style="margin-top: 100px;">
   <div>
     <div>
-      <h2><%= "Vos informations" %></h2>
+      <h2 style="color: $dark-gray;"><%= "Vos informations" %></h2>
       <% if current_user %>
         <%= render 'form_with_user' %>
       <% else %>
@@ -9,7 +9,7 @@
       <% end %>
   </div>
   <div>
-    <%= link_to 'Retour au panier', :back %>
+    <%= link_to 'Retour au panier', :back, style:"color: $dark-gray;"%>
   </div>
 </div>
 

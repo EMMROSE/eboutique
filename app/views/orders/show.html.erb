@@ -1,13 +1,14 @@
 <div class="container" style="margin-top: 100px;">
   <div class="row py-4">
     <div class="col">
-      <h1>Order n°<%= @order.id %> <small><%= @order.status %></small></h1>
+      <h1 style="text-decoration: underline;">Order n°<%= @order.id %></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+        <li><strong>STATUT:</strong> <%= @order.status %></li>
+        <li><strong>DATE:</strong> <%= @order.created_at.to_date %></li>
+        <li><strong>TOTAL:</strong> <%= @order.amount %>€</li>
         </li>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
+      <p>Livraison estimée dans<strong> 5 jours</strong>.</p>
     </div>
   </div>
   <div class="button-diagonal" id="button-home-univers">

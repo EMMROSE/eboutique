@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.string "email"
     t.string "address"
     t.string "zip_code"
