@@ -10,6 +10,7 @@ class EventSubscriptionsController < ApplicationController
     @subscription = EventSubscription.new(event_subscription_params)
     if @subscription.save
       SubscriptionMailer.confirmation(@subscription).deliver_now
+      SubscriptionMailer.information(@subscription).deliver_now
       redirect_to event_path
       flash[:notice] = "Votre inscription a bien été enregistrée."
     else
