@@ -54,7 +54,7 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .home-atelier-right {
-    height: 138px;
+    height: 132px;
     width: 60%;
     padding: 15px 0px 0px 15px;
     margin-top:30px;
@@ -81,6 +81,24 @@
     img {
       width: 80%;
       max-width: 505px;
+    }
+  }
+}
+
+// Medium device
+@media (min-width: 576px) and (max-width: 992px) {
+  .home-atelier-right {
+    flex-basis: 50%;
+    border: solid 3px $gray;
+    height: 280px;
+    width: 60%;
+    max-width: 380px;
+    text-align: left;
+    padding: 50px;
+    margin-top: 54px;
+    color: $gray;
+    h1, h2, h4{
+    color: $dark-gray;
     }
   }
 }
