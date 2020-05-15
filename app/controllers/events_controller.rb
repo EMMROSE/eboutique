@@ -15,15 +15,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-
     if @event.save
       flash.notice = "Thank you! you add successfully a new event."
-      redirect_to root_path
+      redirect_to admin_path
     else
-      #flash.now[:error] = t('flash.work.error_html')
       render :new
     end
   end
+
   def edit
     @event = Event.find(params[:id])
   end
