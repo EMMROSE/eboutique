@@ -15,6 +15,8 @@ class OrdersController < ApplicationController
       save_user_address if params[:save_address].to_i == 1
       trigger_stripe
       cleanup_cart
+      OrderMailer.confirmation(@order).deliver_now
+      OrderMailer.information(@order).deliver_now
       redirect_to new_order_payment_path(@order)
     else
       @cart = @current_cart
@@ -53,7 +55,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:email, :address, :zip_code, :city, :status)
+    params.require(:order).permit(:fullname, :phone, :email, :address, :zip_code, :city, :status)
   end
 
   def trigger_stripe

@@ -12,4 +12,11 @@ class OrderMailer < ApplicationMailer
       subject:  "Votre commande - Samedi 28"
     )
   end
+  def information(order)
+    @order = order
+    mail(
+      to:       "boutique@samedi28.com",
+      subject:  "Nouvelle commande en ligne"
+    )
+  end
 end

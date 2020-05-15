@@ -15,7 +15,7 @@ class SubscriptionMailer < ApplicationMailer
   def information(subscription)
     @subscription = subscription
     mail(
-      to:       "emrose351@gmail.com",
+      to:       "boutique@samedi28.com",
       subject:  "Participation à  #{@subscription.event.title}"
     )
   end

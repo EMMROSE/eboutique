@@ -17,6 +17,7 @@
   img {
     height: 100%;
     width:45%;
+    border-radius: 6%;
   }
 }
 
@@ -39,6 +40,7 @@
   background-color: red;
   color: white;
   border-radius: 4%;
+  font-weight: bold;
 }
 .price {
   height: 20%;
@@ -62,6 +64,7 @@
   .product-description {
     width:50%;
     h1 {font-size: 1.5rem;}
+    h3 {font-size: 1.0rem;}
   }
   .price {
     height: 30%;
@@ -69,5 +72,17 @@
     justify-content: space-between;
     align-items: flex-end;
     a {max-width: 80%;}
+  }
+}
+
+// Medium DEvice
+@media (min-width: 576px) and (max-width: 992px) {
+    .product-illustration{
+    width: 60%;
+    }
+    .product-description {
+    width:40%;
+    h1 {font-size: 2.0rem;}
+    h3 {font-size: 1.25rem;}
   }
 }

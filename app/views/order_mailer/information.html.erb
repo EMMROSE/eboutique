@@ -1,14 +1,25 @@
-<p>Bonjour,</p>
-<br>
-<p>Votre commande n° <%= @order.id %> est confirmée.</p>
+<h3>Nouvelle commande sur la boutique</h3>
+
+<p>La commande n° <%= @order.id %> est confirmée.</p>
+<p>--------------------------------</p>
+<p>Client : </p>
+<%= @order.fullname %>
+<%= @order.email %>
+<%= @order.phone %>
+<%= @order.address %>
+<%= @order.zip_code %>
+<%= @order.city %>
+<p>--------------------------------</p>
 <p>Détails :</p>
 <ul>
   <% @order.line_items.each do |item| %>
     <li><%= item.quantity %> X <%= item.product.name %></li>
+    <p>----------------</p>
   <% end %>
 </ul>
 <p>--------------------------------</p>
-<p>Total de votre commande: <%= @order.amount %> €.</p>
+<p>Total de la commande: <%= @order.amount %> €.</p>
+<p>--------------------------------</p>
 <p>Nous restons à votre disposition.</p>
 <br>
 <h3><strong>Samedi 28</strong></h3>
@@ -20,3 +31,9 @@
 <p>--------------------------------</p>
 <p>Cet email est généré automatiquement. Merci de ne pas y répondre.</p>
 <p>--------------------------------</p>
+
+
+    t.string "email"
+    t.string "address"
+    t.string "zip_code"
+    t.string "city"

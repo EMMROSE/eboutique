@@ -102,12 +102,20 @@
     background-color: $lighter-gray;
     font-color: $dark-gray;
     font-size: 14px;
+    font-family: "Maven Pro", "sans-serif";
+    font-weight: bold;
   }
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   #button-diagonal-studio {
-    margin-left: 24%;
+    margin-left: 25%;
+    margin-top: 28px;
+    button {
+      height: 40px !important;
+      width: 210px !important;
+      font-size: 16px !important;
+    }
   }
   .button-diagonal {
     button {
@@ -145,6 +153,10 @@
     position: absolute;
     top: 15px; left: 0px;
   }
+  #triangle-bottom-right-page-studio {
+    position: absolute;
+    bottom: 0px; left: 110px;
+  }
   #triangle-bottom-right-event {
     position: absolute;
     top: 32px; left: 130px;
@@ -154,6 +166,16 @@
     button {
       width: 140px;
       height: 40px;
+    }
+  }
+  #button-product-show {
+    button {
+      height: 40px;
+      width: 160px;
+      border: solid 5px #373A45;
+      background-color: $lighter-gray;
+      font-color: $dark-gray;
+      font-size: 12px;
     }
   }
 }

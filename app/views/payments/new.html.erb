@@ -2,10 +2,15 @@
   <div class="row py-4">
     <div class="col">
       <h1>Récapitulatif de votre commande :</h1>
-      <p>Commande de <strong><%= @order.id%></strong> pour <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <% items = 0 %>
+      <% @order.line_items.each do |item| %>
+        <% items += item.quantity%>
+      <% end %>
+      <p>Commande de <strong><%= items %> article(s)</strong> pour  un montant de <strong><%= @order.amount %> €</strong></p>
       <div class="button-diagonal">
         <button id="pay">Payer</button>
       </div>
+      <p>Vous allez être redirigé vers notre prestataire de paiement sécurisé Stripe.</p>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>

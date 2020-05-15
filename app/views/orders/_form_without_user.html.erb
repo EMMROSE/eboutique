@@ -1,9 +1,11 @@
 <%= simple_form_for @order do |f| %>
   <div class="form-top">
+    <%= f.input :fullname, label: false, placeholder: 'Votre prénom & nom de famille' %>
+    <%= f.input :phone, label: false, placeholder: 'n° de téléphone' %>
     <%= f.input :email, label: false, placeholder: 'email' %>
-    <%= f.input :address, label: false, placeholder: 'address' %>
-    <%= f.input :zip_code, label: false, placeholder: 'zip_code' %>
-    <%= f.input :city, label: false, placeholder: 'city' %>
+    <%= f.input :address, label: false, placeholder: 'adresse de livraison' %>
+    <%= f.input :zip_code, label: false, placeholder: 'Code postal' %>
+    <%= f.input :city, label: false, placeholder: 'Ville' %>
   </div>
   <div>
     <span>

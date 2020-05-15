@@ -1,18 +1,16 @@
 <!-- app/views/contacts/new.html.erb -->
-<div style="display:flex; justify-content: center;">
-  <div class="form-container" style="margin-top: 100px;">
-   <% new_contact = Contact.new %>
-   <%= simple_form_for(new_contact) do |f| %>
-     <div class="form-top">
-       <%= f.input :name, label: 'votre nom', placeholder: "Prénom Nom" %>
-       <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
-       <%= f.input :message, label: 'Décrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
-      </div>
-     <div class="form-button button-diagonal">
-      <%= f.submit "Soumettre", class: 'button-diagonal'%>
-      <span class="triangle-top-left"></span>
-      <span class="triangle-bottom-right"></span>
-     </div>
-   <% end %>
+<div style="display:flex; justify-content: center; margin-top: 150px;">
+  <div class="form-container">
+   <h2>Votre projet</h2>
+     <% new_contact = Contact.new %>
+     <%= simple_form_for(new_contact) do |f| %>
+       <div class="form-top">
+         <%= f.input :name, label: 'votre nom', placeholder: "Prénom Nom" %>
+         <%= f.input :phone, label: 'votre n° de téléphone', placeholder: "0102030405" %>
+         <%= f.input :email, label: 'votre adresse e-mail', placeholder: "prenom.nom@mail.fr" %>
+         <%= f.input :message, label: 'Décrivez-nous votre projet', as: :text, placeholder: "Samedi 28 pour vous accompagner dans votre projet décoration." %>
+        </div>
+        <%= f.submit "Soumettre", class: 'btn btn-primary'%>
+     <% end %>
   </div>
 </div>

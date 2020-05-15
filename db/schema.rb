@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "phone"
     t.string "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -85,6 +86,8 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
 
   create_table "orders", force: :cascade do |t|
     t.string "status", default: "pending"
+    t.string "fullname"
+    t.string "phone"
     t.string "email"
     t.string "address"
     t.string "zip_code"
