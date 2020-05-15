@@ -38,5 +38,6 @@ class PagesController < ApplicationController
   end
 
   def admin
+    @order = Order.all
   end
 end

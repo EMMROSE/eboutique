@@ -157,3 +157,54 @@
     }
   }
 }
+
+@media (min-width: 576px) and (max-width: 992px) {
+  #button-diagonal-studio {
+    margin-left: 24%;
+  }
+  .button-diagonal {
+    button {
+      height: 45px;
+      width: 170px;
+      border: solid 6px $dark-gray;
+      font-size: 12px;
+    }
+    .triangle-bottom-right {
+      position: absolute;
+      bottom: 0px; left: 160px;
+    }
+  }
+  #button-home-boutique {
+    button {
+      width: 163px;
+      font-size: 9px;
+    }
+  }
+  #button-home-atelier {
+    width: 120px;
+    margin-top: 15px;
+  }
+  #triangle-bottom-right-home-boutique {
+    position: absolute;
+    bottom: 0px; left: 153px;
+  }
+  #triangle-bottom-right-home-studio {
+    position: absolute;
+    bottom: 0px; left: 110px;
+  }
+  #triangle-bottom-left-home-studio {
+    position: absolute;
+    top: 15px; left: 0px;
+  }
+  #triangle-bottom-right-event {
+    position: absolute;
+    top: 32px; left: 130px;
+  }
+  #button-home-event {
+    width: 180px;
+    button {
+      width: 140px;
+      height: 40px;
+    }
+  }
+}

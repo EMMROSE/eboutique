@@ -1,0 +1,15 @@
+<div class="container form-container" style="margin-top: 100px;">
+ <h4>Fiche de la commande n°<%= @order.id %></h4>
+ <%= simple_form_for(@order) do |f| %>
+   <div class="form-top">
+      <%= f.input :email, label: false, placeholder: 'email' %>
+      <%= f.input :address, label: false, placeholder: 'address' %>
+      <%= f.input :zip_code, label: false, placeholder: 'zip_code' %>
+      <%= f.input :city, label: false, placeholder: 'city' %>
+      <div style="color: black;">
+        <%= f.input :status, as: :radio_buttons, collection: ["pending", "payed", "delivered"], wrapper: :vertical_collection_inline %>
+      </div>
+      <%= f.submit 'Sauvegarder', class: "btn btn-primary"%>
+   </div>
+ <% end %>
+</div>

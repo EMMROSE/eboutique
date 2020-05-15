@@ -1,4 +1,9 @@
 // CSS STYLE FOR CART PAGE
+.cart {
+  width: 80%;
+  h2 {text-decoration: underline; color: $dark-gray;}
+  a {text-decoration: none; color: $dark-gray;}
+}
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -8,7 +13,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 370px;
+  align-content: center !important;
   img {
     height: 64px;
     width: 64px;
@@ -18,17 +23,44 @@
     color: $dark-gray;
     margin-left: 10px;
   }
+  .cart-item-left {
+    flex-basis : 40%;
+    display: flex;
+    flex-direction: row;
+  }
+  .cart-item-right {
+    flex-basis : 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
 }
 .total-amount{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  width: 600px;
 }
 
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 992px) {
+  .cart {
+      width: 100%;
+  }
   .total-amount{
+      h4 {font-size: 1rem;}
+    }
+  .cart-item {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    img {
+      height: 48px;
+      width: 48px;
+      border-radius: 4%;
+    }
+    i {
+      color: $dark-gray;
+      margin-left: 10px;
+    }
   }
 }

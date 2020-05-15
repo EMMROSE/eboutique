@@ -1,25 +1,17 @@
-<div id="js-scroll-navbar" class="navbar navbar-expand-sm navbar-light navbar-style fixed-top">
+<div id="js-scroll-navbar" class="navbar navbar-lewagon fixed-top">
   <%= link_to root_path do %>
     <%= image_tag "logo_samedi28.png" %>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div>
-      <%= link_to "Accueil", root_path, class: "dropdown-item" %>
-      <%= link_to "Univers", univers_path, class: "dropdown-item" %>
-      <%= link_to "E-shop", boutique_path, class: "dropdown-item" %>
-      <%= link_to "Conseil", conseil_path, class: "dropdown-item" %>
-      <%= link_to "Ateliers", event_path, class: "dropdown-item" %>
-    </div>
+  <div class="items-menu">
+    <%= link_to "Accueil", root_path %>
+    <%= link_to "Univers", univers_path %>
+    <%= link_to "E-shop", boutique_path %>
+    <%= link_to "Conseil", conseil_path %>
+    <%= link_to "Ateliers", event_path %>
   </div>
 
-
-  <div class="cart">
+  <div class="basket">
     <%= link_to cart_path(@current_cart) do %>
       <i class="fab fa-opencart"></i>
       <% cart = @current_cart %>
@@ -33,5 +25,3 @@
     <% end %>
   </div>
 </div>
-<div class="margin-navbar"></div>
-

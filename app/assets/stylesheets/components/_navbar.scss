@@ -1,81 +1,79 @@
-.navbar-style {
+.navbar-lewagon {
   justify-content: space-between;
   background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  img {
+    width: 60px;
+  }
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar-style .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar {
-  max-width: 100%;
-  img {
-  width: 80px;
-  height: auto;
-  }
-}
-
-.navbar-toggler {
-  margin-right: 52px;
-}
-
-.nav-items{
-  flex-grow: 1;
+.items-menu {
   display: flex;
-  flex-direction: row; //flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
   a {
-    color: black;
+    color: $dark-gray;
     text-decoration: none;
     font-family: $headers-font;
+    font-weight: bold;
   }
 }
 
-.cart {
-  position: absolute;
-  top: 0px; right: 0px;
-  display: flex;
-  justify-content: flex-end;
-  z-index:2;
+.basket {
+  margin-bottom: 24px;
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
   p {
     border-radius: 50%;
     font: 18px;
-    width: 20px;
+    width: 22px;
     text-align: center;
     font-weight: bold;
     color: white;
     background-color: red;
     position: absolute;
-    right: 10px; top: 21px;
-    z-index: 3;
+    right: 20px; top: 29px;
   }
   i {
     margin: 32px 16px 0px 10px;
     font-size: 32px;
     color: $dark-gray;
     position: relative;
-    z-index: 4;
+    z-index: 2;
   }
 }
 
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .navbar .nav-items{
-    display: none;
-  }
-  .navbar {
-    max-width: 575px;
-  }
-  .cart {
-    i {
-      font-size: 24px;
-      margin: 32px 16px 0px 10px;
-    }
-    p {
-      width: 15px;
-      font: 15px;
-    }
-  }
+@media (min-width: 100px) and (max-width: 700px) {
+  .items-menu {display: none;}
 }
+
+
+
+// // Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .navbar .nav-items{
+//     display: none;
+//   }
+//   .navbar {
+//     max-width: 575px;
+//   }
+//   .cart {
+//     i {
+//       font-size: 24px;
+//       margin: 32px 16px 0px 10px;
+//     }
+//     p {
+//       width: 15px;
+//       font: 15px;
+//     }
+//   }
+// }

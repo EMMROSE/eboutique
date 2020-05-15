@@ -38,10 +38,22 @@ class OrdersController < ApplicationController
     session[:without_login] = true
   end
 
+  def edit
+    @order = Order.find(params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      redirect_to admin_path
+    else render :edit
+    end
+  end
+
   private
 
   def order_params
-    params.require(:order).permit(:email, :address, :zip_code, :city)
+    params.require(:order).permit(:email, :address, :zip_code, :city, :status)
   end
 
   def trigger_stripe

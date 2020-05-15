@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container "style="margin-top: 100px;">
   <div class="row py-4">
     <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.id%></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <h1>Récapitulatif de votre commande :</h1>
+      <p>Commande de <strong><%= @order.id%></strong> pour <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <div class="button-diagonal">
+        <button id="pay">Payer</button>
+      </div>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -14,7 +16,7 @@
             sessionId: '<%= @order.checkout_session_id %>'
           });
         });
-      </script> -->
+      </script>
     </div>
   </div>
 </div>

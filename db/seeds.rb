@@ -8,6 +8,17 @@
 require "open-uri"
 
 puts 'start seeds...'
+puts 'Destroy all users'
+User.destroy_all
+puts '>>>>>> Done!'
+puts '----------------'
+
+
+puts 'Create users'
+@user1 = User.new(email: 'user1@gmail.com', password:'123456')
+@user1.save!
+puts '>>>>>> Done!'
+puts '----------------'
 
 Product.destroy_all
 puts 'Mobilier...'

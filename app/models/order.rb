@@ -7,6 +7,7 @@ class Order < ApplicationRecord
   validates :address, presence: true
   validates :zip_code, presence: true
   validates :city, presence: true
-
+  STATUSES = ["pending", "payed", "delivered"]
+  validates :status, inclusion: {in: STATUSES}
   monetize :amount_cents
 end
