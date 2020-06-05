@@ -10,7 +10,7 @@
       <div class="button-diagonal">
         <button id="pay">Payer</button>
       </div>
-      <p>Vous allez être redirigé vers notre prestataire de paiement sécurisé Stripe.</p>
+      <p>Vous allez être redirigé vers notre prestataire Stripe pour un paiement sécurisé.</p>
 
       <script src="https://js.stripe.com/v3/"></script>
       <script>
@@ -22,6 +22,16 @@
           });
         });
       </script>
+   <!--    to reduce quantity of product -->
+  <!--  <script>
+     const paymentButton = document.getElementById('pay');
+     paymentButton.addEventListener('click', () => {
+       const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+       stripe.redirectToCheckout({
+         sessionId: '<%= @order.checkout_session_id %>'
+       });
+     });
+   </script> -->
     </div>
   </div>
 </div>

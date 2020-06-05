@@ -6,6 +6,15 @@
     <%= f.input :address, label: false, placeholder: 'adresse de livraison' %>
     <%= f.input :zip_code, label: false, placeholder: 'Code postal' %>
     <%= f.input :city, label: false, placeholder: 'Ville' %>
+    <div>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Mode de retrait</label>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <option selected>Choose...</option>
+        <option value="true">En livraison</option>
+        <option value="false">A retirer en boutique</option>
+
+      </select>
+    </div>
   </div>
   <div>
     <span>
