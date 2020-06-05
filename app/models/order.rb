@@ -9,4 +9,5 @@ class Order < ApplicationRecord
   STATUSES = ["pending", "payed", "delivered"]
   validates :status, inclusion: {in: STATUSES}
   monetize :amount_cents
+
 end
