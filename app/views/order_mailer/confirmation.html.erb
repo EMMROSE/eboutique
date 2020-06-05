@@ -1,6 +1,6 @@
 <p>Bonjour,</p>
 <br>
-<p>Votre commande n° <%= @order.id %> est confirmée.</p>
+<p>Votre commande est confirmée.</p>
 <p>Détails :</p>
 <ul>
   <% @order.line_items.each do |item| %>
@@ -9,6 +9,11 @@
 </ul>
 <p>--------------------------------</p>
 <p>Total de votre commande: <%= @order.amount %> €.</p>
+<br>
+<% if @order.delivery %>
+  <p>Elle vous sera adressée dans les plus brefs délais.</p>
+<% else %>
+  <p>Vous pouvez venir la récupérer dans notre Boutique pendant les horaires d'ouvertures.</p>
 <p>Nous restons à votre disposition.</p>
 <br>
 <h3><strong>Samedi 28</strong></h3>
@@ -16,6 +21,7 @@
 <p>83320 - Carqueiranne</p>
 <p><i class="fas fa-mobile-alt"></i> 06 71 99 89 56</p>
 <p><i class="fas fa-envelope"></i> boutique@samedi28.com</p>
+<p>Ouvert du Lundi au Samedi (matin: 10h-13h / après-midi: 14h-19).</p>
 <br>
 <p>--------------------------------</p>
 <p>Cet email est généré automatiquement. Merci de ne pas y répondre.</p>

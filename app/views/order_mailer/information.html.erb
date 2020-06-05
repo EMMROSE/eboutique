@@ -17,6 +17,11 @@
     <p>----------------</p>
   <% end %>
 </ul>
+<% if @order.delivery %>
+  <p>Mode de retrait : Livraison</p>
+<% else %>
+  <p>Mode de retrait: en boutique</p>
+<% end %>
 <p>--------------------------------</p>
 <p>Total de la commande: <%= @order.amount %> €.</p>
 <p>--------------------------------</p>
