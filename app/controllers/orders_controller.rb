@@ -9,12 +9,13 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @current_cart.line_items.each { |item| @order.line_items << item }
-    # @order.amount = @current_cart.sub_total
-    if @order.delivery
-      @order.amount = @current_cart.sub_total + 5.to_money
-    else
-      @order.amount = @order.amount = @current_cart.sub_total
-    end
+    @order.amount = @current_cart.sub_total
+    @order.delivery = @current_cart.delivery
+    # if @order.delivery
+    #   @order.amount = @current_cart.sub_total + 5.to_money
+    # else
+    #   @order.amount = @current_cart.sub_total
+    # end
     @order.user = current_user if current_user
     if @order.save
       save_user_address if params[:save_address].to_i == 1

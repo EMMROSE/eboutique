@@ -8,7 +8,18 @@
         <li><strong>TOTAL:</strong> <%= @order.amount %>€</li>
         </li>
       </ul>
-      <p>Livraison estimée dans<strong> 5 jours</strong>.</p>
+      <p>Détails :</p>
+      <ul>
+        <% @order.line_items.each do |item| %>
+          <li><%= item.quantity %> X <%= item.product.name %></li>
+          <% item.product.quantity -= item.quantity %>
+        <% end %>
+      </ul>
+      <% if @order.delivery %>
+        <p>Livraison estimée dans<strong> 5 jours</strong>.</p>
+      <% else %>
+        <p>Votre commande est à retirer en boutique.</p>
+      <% end %>
     </div>
   </div>
   <div class="button-diagonal" id="button-home-univers">

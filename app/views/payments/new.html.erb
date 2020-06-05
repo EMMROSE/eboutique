@@ -6,7 +6,7 @@
       <% @order.line_items.each do |item| %>
         <% items += item.quantity%>
       <% end %>
-      <p>Commande de <strong><%= items %> article(s)</strong> pour  un montant de <strong><%= @order.amount %> €</strong></p>
+      <p>Commande de <strong><%= items %> article(s)</strong> pour un montant de <strong><%= @order.amount %> €</strong></p>
       <div class="button-diagonal">
         <button id="pay">Payer</button>
       </div>

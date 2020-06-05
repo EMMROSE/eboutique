@@ -43,13 +43,45 @@
           <h4>Total de ma commande :</h4>
           <h4>  <%= (@cart.sub_total) %> €</h4>
         </div>
-        <div class="button-diagonal">
+        <br>
+   <!--      to select delivery mode -->
+        <%= simple_form_for @cart do |f| %>
+          <div class="form-top">
+            <div>
+              <label class="my-1 mr-2" for="delivery">Mode de retrait</label>
+              <select class="custom-select my-1 mr-sm-2" id="delivery">
+                <option selected>Choose...</option>
+                <option value="true">En livraison (+ 5.00€ de frais)</option>
+                <option value="false">A retirer en boutique</option>
+
+              </select>
+            </div>
+          </div>
+          <div>
+            <span>
+              Total de votre commande:
+            </span>
+            <span>
+              <% if @order.delivery  %>
+                <%= @cart.shipping %> €
+              <% else %>
+                <%= @cart.sub_total %> €
+              <% end %>
+            </span>
+          </div>
+            <div class="button-diagonal">
+              <button><%= f.submit 'Commandez'%></button>
+              <span class="triangle-top-left"></span>
+              <span class="triangle-bottom-right"></span>
+            </div>
+        <% end %>
+        <!-- <div class="button-diagonal">
           <%= link_to new_order_path do %>
             <button>Commander</button>
           <% end %>
           <span class="triangle-top-left"></span>
           <span class="triangle-bottom-right"></span>
-        </div>
+        </div> -->
       </div>
       <br>
       <div style="display:flex; flex-direction: row;">

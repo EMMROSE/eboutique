@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
+    t.boolean "delivery", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
@@ -95,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "checkout_session_id"
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "EUR", null: false
+    t.boolean "delivery", default: true
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -110,6 +112,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "price_currency", default: "EUR", null: false
     t.string "category"
     t.string "brand"
+    t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover"

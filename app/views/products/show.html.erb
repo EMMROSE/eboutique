@@ -7,9 +7,12 @@
     </div>
     <div class= "product-description">
       <div class= "description">
-        <h3 id="brand"><%= @product.brand %></h3>
         <h1><%= @product.name %></h1>
         <h3><%= @product.description %></h3>
+        <h3><%= @product.brand %></h3>
+        <% if @product.quantity == 0 %>
+          <p>ce produit n'est pas disponible actuellement.</p>
+        <% end %>
       </div>
       <div class= "price">
         <h3><%= @product.price%>€</h3>
