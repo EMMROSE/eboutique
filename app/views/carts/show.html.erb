@@ -57,23 +57,11 @@
               </select>
             </div>
           </div>
-          <div>
-            <span>
-              Total de votre commande:
-            </span>
-            <span>
-              <% if @order.delivery  %>
-                <%= @cart.shipping %> €
-              <% else %>
-                <%= @cart.sub_total %> €
-              <% end %>
-            </span>
+          <div class="button-diagonal">
+            <button><%= f.submit 'Commandez'%></button>
+            <span class="triangle-top-left"></span>
+            <span class="triangle-bottom-right"></span>
           </div>
-            <div class="button-diagonal">
-              <button><%= f.submit 'Commandez'%></button>
-              <span class="triangle-top-left"></span>
-              <span class="triangle-bottom-right"></span>
-            </div>
         <% end %>
         <!-- <div class="button-diagonal">
           <%= link_to new_order_path do %>
