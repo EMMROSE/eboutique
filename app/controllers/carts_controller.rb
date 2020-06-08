@@ -12,7 +12,7 @@ class CartsController < ApplicationController
 
     def update
       @cart = @current_cart
-      @cart.update(order_params)
+      @cart.update(cart_params)
       redirect_to new_order_path
     end
 
@@ -26,6 +26,6 @@ class CartsController < ApplicationController
     private
 
     def cart_params
-      params.require(:order).permit(:delivery)
+      params.require(:cart).permit(:delivery)
     end
 end
