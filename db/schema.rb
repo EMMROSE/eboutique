@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
-    t.boolean "delivery", default: false
+    t.string "delivery", default: "en boutique"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"

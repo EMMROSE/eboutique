@@ -7,15 +7,13 @@ class CartsController < ApplicationController
     end
 
     def edit
-      @cart = Cart.find(params[:id])
+      @cart = @current_cart
     end
 
     def update
-      @cart = Cart.find(params[:id])
-      if @cart.update(cart_params)
-        redirect_to new_order_path
-      else render :edit
-      end
+      @cart = @current_cart
+      @cart.update(order_params)
+      redirect_to new_order_path
     end
 
     def destroy
@@ -28,6 +26,6 @@ class CartsController < ApplicationController
     private
 
     def cart_params
-      params.require(:cart).permit(:delivery)
+      params.require(:order).permit(:delivery)
     end
 end
