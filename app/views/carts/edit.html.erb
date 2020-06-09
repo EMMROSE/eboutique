@@ -45,13 +45,6 @@
         </div>
         <br>
    <!--      conditions -->
-   mon panier contient un article non transportable + mon @cart.sub_total >= 50€
-   => livraison gratuite dans un rayon de 40km + retrait en magasin
-  mon panier ne contient pas d'article non transportable + mon @cart.sub_total >= 50€
-  => retrait en magasin + livraison colissimo + livraison gratuite dans un rayon de 40km
-  mon panier ne contient pas d'article non transportable + mon @cart.sub_total < 50€
-  => retrait en magasin + livraison colissimo
-         <!--      to select delivery mode -->
          <%= form_for @current_cart do |f| %>
            <label for="delivery">Example select</label>
                <select class="form-control" id="delivery">

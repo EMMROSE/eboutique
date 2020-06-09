@@ -8,6 +8,7 @@ class CartsController < ApplicationController
 
     def edit
       @cart = @current_cart
+      @line_items = @cart.line_items.order(:created_at)
     end
 
     def update

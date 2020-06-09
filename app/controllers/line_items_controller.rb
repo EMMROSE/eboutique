@@ -6,14 +6,15 @@ class LineItemsController < ApplicationController
     @line_item.cart = @current_cart
     @line_item.product = Product.find(params[:product_id])
     @line_item.save
-    redirect_to cart_path(@current_cart)
+    redirect_to edit_cart_path(@current_cart)
   end
 
   def add_quantity
     line_item = LineItem.find(params[:id])
     line_item.quantity += 1
     line_item.save
-    redirect_to cart_path
+    # redirect_to cart_path
+    redirect_to edit_cart_path(@current_cart)
   end
 
   def reduce_quantity
@@ -22,12 +23,14 @@ class LineItemsController < ApplicationController
       line_item.quantity -= 1
     end
     line_item.save
-    redirect_to cart_path
+    # redirect_to cart_path
+    redirect_to edit_cart_path(@current_cart)
   end
 
   def destroy
     line_item = LineItem.find(params[:id])
     line_item.destroy
-    redirect_to cart_path
+    # redirect_to cart_path
+    redirect_to edit_cart_path(@current_cart)
   end
 end

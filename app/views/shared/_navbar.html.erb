@@ -12,7 +12,7 @@
   </div>
 
   <div class="basket">
-    <%= link_to cart_path(@current_cart) do %>
+    <%= link_to edit_cart_path(@current_cart) do %>
       <i class="fab fa-opencart"></i>
       <% cart = @current_cart %>
       <% items =0 %>
