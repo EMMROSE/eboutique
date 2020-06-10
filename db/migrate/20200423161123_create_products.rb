@@ -8,6 +8,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.monetize :price
       t.string :category
       t.string :brand
+      t.string :deliverable, default: "false"
       t.integer :quantity, default: 1
 
       t.timestamps

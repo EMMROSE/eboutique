@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer "quantity", default: 1
+    t.integer "deliverable"
     t.bigint "product_id", null: false
     t.bigint "cart_id"
     t.bigint "order_id"
@@ -96,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "checkout_session_id"
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "EUR", null: false
-    t.boolean "delivery", default: true
+    t.string "delivery"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "price_currency", default: "EUR", null: false
     t.string "category"
     t.string "brand"
+    t.string "deliverable", default: "false"
     t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

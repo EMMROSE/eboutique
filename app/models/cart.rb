@@ -19,4 +19,17 @@ class Cart < ApplicationRecord
     sum+= 5.to_money
     return sum
   end
+
+  def deliver
+    deliverable_item = 0
+    self.line_items.each do |item|
+      if item.product.deliverable == "false"
+        deliverable_item += 1
+      else
+        deliverable_item += 0
+      end
+    end
+    return deliverable_item
+  end
+
 end

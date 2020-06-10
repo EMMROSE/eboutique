@@ -22,95 +22,95 @@ puts '----------------'
 
 Product.destroy_all
 puts 'Mobilier...'
-product1 = Product.create({:category=>'mobilier', :name=>'Chaise « Peau de vache»', :brand=>"Simla", :description=>"Chaise en bois et sangles en cuir cognac, Dimensions 65 / 75 cm Hauteur 80 cm", :sku=>"00001", :quantity=>1, price_cents: 39000})
+product1 = Product.create({:category=>'mobilier', :name=>'Chaise « Peau de vache»', :brand=>"Simla", :description=>"Chaise en bois et sangles en cuir cognac, Dimensions 65 / 75 cm Hauteur 80 cm", :sku=>"00001", :quantity=>1, price_cents: 39000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218292/mobilier/Chaise_peau_de_vache_1_tq16ne.png')
 product1.photo.attach(io: file, filename: 'Chaise_peau_de_vache_1_tq16ne.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218286/mobilier/Chaise_peau_de_vache_2_dtivph.png')
 product1.cover.attach(io: file, filename: 'Chaise_peau_de_vache_2_dtivph.png', content_type: 'image/png')
 product1.save!
 puts 'number 1 finished'
-product2 = Product.create({:category=>'mobilier', :name=>"Coussin de sol « Smiling »", :brand=>"Simla", :description=>"Coussin de sol écru et noir en coton, dimensions 80 / 60 cm", :sku=>"00002", :quantity=>1, price_cents: 10000})
+product2 = Product.create({:category=>'mobilier', :name=>"Coussin de sol « Smiling »", :brand=>"Simla", :description=>"Coussin de sol écru et noir en coton, dimensions 80 / 60 cm", :sku=>"00002", :quantity=>1, price_cents: 10000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274014/mobilier/9_xlsrdk.jpg')
 product2.photo.attach(io: file, filename: '9_xlsrdk.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274013/mobilier/10_mclkpz.jpg')
 product2.cover.attach(io: file, filename: '10_mclkpz.jpg', content_type: 'image/jpg')
 product2.save!
 puts 'number 2 finished'
-product3 = Product.create({:category=>'mobilier', :name=>"Etagère murale « bambou »", :brand=>"MadamStoltz", :description=>"Etagère murale en bambou et rotin couleur naturelle, diamètre 60 cm", :sku=>"00003", :quantity=>1, price_cents: 12500})
+product3 = Product.create({:category=>'mobilier', :name=>"Etagère murale « bambou »", :brand=>"MadamStoltz", :description=>"Etagère murale en bambou et rotin couleur naturelle, diamètre 60 cm", :sku=>"00003", :quantity=>1, price_cents: 12500, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274012/mobilier/15_ggbzyn.jpg')
 product3.photo.attach(io: file, filename: '15_ggbzyn.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218275/mobilier/Etagere_bambou_2_ltsuwp.jpg')
 product3.cover.attach(io: file, filename: 'Etagere_bambou_2_ltsuwp.jpg', content_type: 'image/jpg')
 product3.save!
 puts 'number 3 finished'
-product4 = Product.create({:category=>'mobilier', :name=>"Etagère murale Quandratic", :brand=>"MadamStoltz", :description=>"Etagère murale en fer couleur laiton antik, dimensions 61 / 15 / 61 cm", :sku=>"00004", :quantity=>1, price_cents: 9800})
+product4 = Product.create({:category=>'mobilier', :name=>"Etagère murale Quandratic", :brand=>"MadamStoltz", :description=>"Etagère murale en fer couleur laiton antik, dimensions 61 / 15 / 61 cm", :sku=>"00004", :quantity=>1, price_cents: 9800, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218285/mobilier/Etagere_murale_fer_gold_2_fgd8ly.png')
 product4.photo.attach(io: file, filename: 'Etagere_murale_fer_gold_2_fgd8ly.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218288/mobilier/Etagere_murale_fer_gold_1_pzxcoi.jpg')
 product4.cover.attach(io: file, filename: 'Etagere_murale_fer_gold_1_pzxcoi.jpg', content_type: 'image/jpg')
 product4.save!
 puts 'number 4 finished'
-product5 = Product.create({:category=>'mobilier', :name=>"Matelas nomade", :brand=>"MadamStoltz", :description=>"Matelas nomade en coton et franges, dimensions 70 / 180 cm. Existe en couleurs: Beige ou marsala ", :sku=>"00005", :quantity=>1, price_cents: 8700})
+product5 = Product.create({:category=>'mobilier', :name=>"Matelas nomade", :brand=>"MadamStoltz", :description=>"Matelas nomade en coton et franges, dimensions 70 / 180 cm. Existe en couleurs: Beige ou marsala ", :sku=>"00005", :quantity=>1, price_cents: 8700, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Matelas_nomade_1_rdfxaf.png')
 product5.photo.attach(io: file, filename: 'Matelas_nomade_1_rdfxaf.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218276/mobilier/Matelas_nomade_3_xrpvea.jpg')
 product5.cover.attach(io: file, filename: 'Matelas_nomade_3_xrpvea.jpg', content_type: 'image/jpg')
 puts 'number 5 finished'
-product6 = Product.create({:category=>'mobilier', :name=>"Miroir rond naturel", :brand=>"MadamStoltz", :description=>"Miroir rond macramé et franges, couleur naturel, diamètre 52 cm", :sku=>"00006", :quantity=>1, price_cents: 9600})
+product6 = Product.create({:category=>'mobilier', :name=>"Miroir rond naturel", :brand=>"MadamStoltz", :description=>"Miroir rond macramé et franges, couleur naturel, diamètre 52 cm", :sku=>"00006", :quantity=>1, price_cents: 9600, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218282/mobilier/12_a5muyo.jpg')
 product6.photo.attach(io: file, filename: '12_a5muyo.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274012/mobilier/14_xnafdt.jpg')
 product6.cover.attach(io: file, filename: '14_xnafdt.jpg', content_type: 'image/jpg')
 puts 'number 6 finished'
-product7 = Product.create({:category=>'mobilier', :name=>"Miroir oeil rotin", :brand=>"Simla", :description=>"Miroir en forme d'oeil en rotin naturel, dimensions 65 / 45 cm", :sku=>"00007", :quantity=>1, price_cents: 6100})
+product7 = Product.create({:category=>'mobilier', :name=>"Miroir oeil rotin", :brand=>"Simla", :description=>"Miroir en forme d'oeil en rotin naturel, dimensions 65 / 45 cm", :sku=>"00007", :quantity=>1, price_cents: 6100, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218278/mobilier/Miroir_oeil_rotin_1_wgnzos.png')
 product7.photo.attach(io: file, filename: 'Miroir_oeil_rotin_1_wgnzos.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218279/mobilier/Miroir_oeil_rotin_2_rdnsnl.jpg')
 product7.cover.attach(io: file, filename: 'Miroir_oeil_rotin_2_rdnsnl.jpg', content_type: 'image/jpg')
 puts 'number 7 finished'
-product8 = Product.create({:category=>'mobilier', :name=>"Miroir rond noir", :brand=>"Simla", :description=>"Miroir rond cerclage en aluminum et verre biseauté, couleur noir, diamètre 45 cm", :sku=>"00008", :quantity=>1, price_cents: 4500})
+product8 = Product.create({:category=>'mobilier', :name=>"Miroir rond noir", :brand=>"Simla", :description=>"Miroir rond cerclage en aluminum et verre biseauté, couleur noir, diamètre 45 cm", :sku=>"00008", :quantity=>1, price_cents: 4500, deliverable: "true"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Miroir_rond_bisote_noir_1.png')
 product8.photo.attach(io: file, filename: 'Miroir_rond_bisote_noir_1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Miroir_rond_bisot_noir_2_n1fbwe.jpg')
 product8.cover.attach(io: file, filename: 'Miroir_rond_bisot_noir_2_n1fbwe.jpg', content_type: 'image/jpg')
 puts 'number 8 finished'
-product30 = Product.create({:category=>'mobilier', :name=>"Miroir rond noir", :brand=>"Simla", :description=>"Miroir rond cerclage en aluminum et verre biseauté, couleur noir, diamètre 60 cm", :sku=>"000030", :quantity=>1, price_cents: 8600})
+product30 = Product.create({:category=>'mobilier', :name=>"Miroir rond noir", :brand=>"Simla", :description=>"Miroir rond cerclage en aluminum et verre biseauté, couleur noir, diamètre 60 cm", :sku=>"000030", :quantity=>1, price_cents: 8600, deliverable: "true"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Miroir_rond_bisote_noir_1.png')
 product30.photo.attach(io: file, filename: 'Miroir_rond_bisote_noir_1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Miroir_rond_bisot_noir_2_n1fbwe.jpg')
 product30.cover.attach(io: file, filename: 'Miroir_rond_bisot_noir_2_n1fbwe.jpg', content_type: 'image/jpg')
 puts 'number 30 finished'
-product9 = Product.create({:category=>'mobilier', :name=>"Pouf Bicolore", :brand=>"MadamStoltz", :description=>"Pouf interieur et exterieur en coton et rembourrage en polystyrène, dimensions 150 / 80 / 45 cm. En complément Prix coussin, dimensions 65/65 cm  à 62 €", :sku=>"00009", :quantity=>1, price_cents: 29000})
+product9 = Product.create({:category=>'mobilier', :name=>"Pouf Bicolore", :brand=>"MadamStoltz", :description=>"Pouf interieur et exterieur en coton et rembourrage en polystyrène, dimensions 150 / 80 / 45 cm. En complément Prix coussin, dimensions 65/65 cm  à 62 €", :sku=>"00009", :quantity=>1, price_cents: 29000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218283/mobilier/Pouf_In_out_Door_1_kanncv.png')
 product9.photo.attach(io: file, filename: 'Pouf_In_out_Door_1_kanncv.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274012/mobilier/13_kzka7q.jpg')
 product9.cover.attach(io: file, filename: '13_kzka7q.jpg', content_type: 'image/jpg')
 puts 'number 9 finished'
-product10 = Product.create({:category=>'mobilier', :name=>"Table basse ronde", :brand=>"Simla", :description=>"Table basse en bois Mindi, couleur noir, dimensions hauteur 24 cm diamètre 50 cm", :sku=>"00010", :quantity=>1, price_cents: 20000})
+product10 = Product.create({:category=>'mobilier', :name=>"Table basse ronde", :brand=>"Simla", :description=>"Table basse en bois Mindi, couleur noir, dimensions hauteur 24 cm diamètre 50 cm", :sku=>"00010", :quantity=>1, price_cents: 20000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218275/mobilier/Table_ronde_bois_1_yua17d.png')
 product10.photo.attach(io: file, filename: 'Table_ronde_bois_1_yua17d.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218284/mobilier/Table_ronde_bois_2_tcuh0f.jpg')
 product10.cover.attach(io: file, filename: 'Table_ronde_bois_2_tcuh0f.jpg', content_type: 'image/jpg')
 puts 'number 10 finished'
-product31 = Product.create({:category=>'mobilier', :name=>"Table basse ronde", :brand=>"Simla", :description=>"Table basse en bois Mindi, couleur noir, dimensions hauteur 30 cm diamètre 70 cm", :sku=>"00031", :quantity=>1, price_cents: 28000})
+product31 = Product.create({:category=>'mobilier', :name=>"Table basse ronde", :brand=>"Simla", :description=>"Table basse en bois Mindi, couleur noir, dimensions hauteur 30 cm diamètre 70 cm", :sku=>"00031", :quantity=>1, price_cents: 28000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Table_ronde_bois_1_yua17d.png')
 product31.photo.attach(io: file, filename: 'Table_ronde_bois_1_yua17d.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218294/mobilier/Table_ronde_bois_2_tcuh0f.jpg')
 product31.cover.attach(io: file, filename: 'Table_ronde_bois_2_tcuh0f.jpg', content_type: 'image/jpg')
 puts 'number 31 finished'
-product11 = Product.create({:category=>'mobilier', :name=>"Banc « Peau de vache »", :brand=>"Simla", :description=>"Banc en bois et sangles en cuir cognac, dimensions 62 / 33 cm hauteur 42 cm", :sku=>"00011", :quantity=>1, price_cents: 24800})
+product11 = Product.create({:category=>'mobilier', :name=>"Banc « Peau de vache »", :brand=>"Simla", :description=>"Banc en bois et sangles en cuir cognac, dimensions 62 / 33 cm hauteur 42 cm", :sku=>"00011", :quantity=>1, price_cents: 24800, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274012/mobilier/11_zitdzl.jpg')
 product11.photo.attach(io: file, filename: '11_zitdzl.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589274014/mobilier/8_iwd3gb.jpg')
 product11.cover.attach(io: file, filename: '8_iwd3gb.jpg', content_type: 'image/jpg')
 puts 'number 11 finished'
-product12 = Product.create({:category=>'mobilier', :name=>"Tabouret racine de teck", :brand=>"Simla", :description=>"Tabouret en racine de teck couleur bois naturel, hauteur 47 cm", :sku=>"00012", :quantity=>1, price_cents: 12800})
+product12 = Product.create({:category=>'mobilier', :name=>"Tabouret racine de teck", :brand=>"Simla", :description=>"Tabouret en racine de teck couleur bois naturel, hauteur 47 cm", :sku=>"00012", :quantity=>1, price_cents: 12800, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218289/mobilier/Tabouret_racine_de_teck_2_jdzgjd.jpg')
 product12.photo.attach(io: file, filename: 'Tabouret_racine_de_teck_2_jdzgjd.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218280/mobilier/Tabouret_racine_de_teck_1_yg5mqb.jpg')
 product12.cover.attach(io: file, filename: 'Tabouret_racine_de_teck_1_yg5mqb.jpg', content_type: 'image/jpg')
 puts 'number 12 finished'
-product13 = Product.create({:category=>'mobilier', :name=>"Table d'appoint", :brand=>"HK living", :description=>"table d’appoint, bout de canapé en terrazzo, hauteur 44 cm diamètre 35 cm", :sku=>"00013", :quantity=>1, price_cents: 20000})
+product13 = Product.create({:category=>'mobilier', :name=>"Table d'appoint", :brand=>"HK living", :description=>"table d’appoint, bout de canapé en terrazzo, hauteur 44 cm diamètre 35 cm", :sku=>"00013", :quantity=>1, price_cents: 20000, deliverable: "false"})
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218282/mobilier/tabouret_table_d_appoint_terrazzo_2_xlnbbw.jpg')
 product13.photo.attach(io: file, filename: 'tabouret_table_d_appoint_terrazzo_2_xlnbbw.jpg', content_type: 'image/jpg')
 file = URI.open('https://res.cloudinary.com/samedi28/image/upload/v1589218279/mobilier/tabouret_table_d_appoint_terrazzo_3_asjfgn.png')

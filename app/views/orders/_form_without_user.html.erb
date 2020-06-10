@@ -12,11 +12,8 @@
       Total de votre commande:
     </span>
     <span>
-      <% if @order.delivery  %>
-        <%= @cart.shipping %> €
-      <% else %>
-        <%= @cart.sub_total %> €
-      <% end %>
+      <%= @cart.sub_total %> €
+      <p>Mode de livraison: <%= @cart.delivery %></p>
     </span>
   </div>
     <%= f.submit 'confirmer', class: "btn btn-primary"%>
