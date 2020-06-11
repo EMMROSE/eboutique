@@ -8,7 +8,8 @@
     <%= f.number_field :price_cents, label: "Prix (en centimes)"%>
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>
     <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description du produit..." %>
-    <%= f.check_box :deliverable, label: 'Produit livrable?', {}, true, false %> <br />
+    <%= f.input :deliverable, as: :radio_buttons, collection: ['false', 'true'], wrapper: :vertical_collection_inline %>
+    <br>
     <div class="d-flex">
       <%= f.input :cover, label: 'Ajoutez une photo de couverture', as: :file %>
       <%= f.input :photo, label: 'Ajoutez une seconde photo', as: :file %>
