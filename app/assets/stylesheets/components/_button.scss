@@ -35,7 +35,16 @@
     border-color: transparent transparent white transparent;
   }
 }
-
+// ID TO CUSTOM INPUT OF F.SUBMIT
+#button-diagonal-cart {
+  border: none;
+  background: transparent;
+  font-color: $dark-gray;
+  font-size: 16px;
+  font-family: "Maven Pro", "sans-serif";
+  font-weight: bold;
+  &:hover {color: white;}
+}
 #button-diagonal-studio {
   margin-left: 40%;
   margin-top: 32px;

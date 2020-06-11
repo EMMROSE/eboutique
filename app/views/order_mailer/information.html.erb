@@ -17,10 +17,12 @@
     <p>----------------</p>
   <% end %>
 </ul>
-<% if @order.delivery %>
-  <p>Mode de retrait : Livraison</p>
+<% if @order.delivery == "Livraison Colissimo (frais de port 5,00€)"%>
+  <p>mode d'expédition:  Colissimo.</p>
+<% elsif  @order.delivery == "Livraison gratuite dans un rayon de 40km"%>
+  <p>mode d'expédition:  Livraison à 40km.</p>
 <% else %>
-  <p>Mode de retrait: en boutique</p>
+  <p>mode d'expédition:  à retirer en Boutique.</p>
 <% end %>
 <p>--------------------------------</p>
 <p>Total de la commande: <%= @order.amount %> €.</p>

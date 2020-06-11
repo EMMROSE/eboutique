@@ -10,8 +10,10 @@
 <p>--------------------------------</p>
 <p>Total de votre commande: <%= @order.amount %> €.</p>
 <br>
-<% if @order.delivery %>
-  <p>Elle vous sera adressée dans les plus brefs délais.</p>
+<% if @order.delivery == "Livraison Colissimo (frais de port 5,00€)"%>
+  <p>Elle vous sera adressée dans les plus brefs délais avec Colissimo.</p>
+<% elsif  @order.delivery == "Livraison gratuite dans un rayon de 40km"%>
+  <p>Nous allons vous appeler très prochainement pour convenir d'une date de livraison.</p>
 <% else %>
   <p>Vous pouvez venir la récupérer dans notre Boutique pendant les horaires d'ouvertures.</p>
 <% end %>

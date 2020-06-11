@@ -44,33 +44,34 @@
           <h4>  <%= (@cart.sub_total) %> €</h4>
         </div>
         <br>
+        <p>Je choisis mon mode de livraison</p>
         <!--      conditions -->
         <% if @current_cart.deliver > 0 && @cart.sub_total >= 50.to_money%>
           <%= form_for @current_cart do |f| %>
-            <%= f.select :delivery, [["En boutique"], ["livraison gratuite dans un rayon de 40km"]], {}, {class: "form-control"} %>
+            <%= f.select :delivery, [["En boutique"], ["Livraison gratuite dans un rayon de 40km"]], {}, {class: "form-control"} %>
             <br>
             <div class="button-diagonal">
-              <button><%= f.submit 'Commandez'%></button>
+              <button><%= f.submit 'Commandez', id:"button-diagonal-cart"%></button>
               <span class="triangle-top-left"></span>
               <span class="triangle-bottom-right"></span>
             </div>
           <% end %>
         <% elsif @current_cart.deliver == 0 && @cart.sub_total >= 50.to_money%>
           <%= form_for @current_cart do |f| %>
-            <%= f.select :delivery, [["En boutique"], ["livraison Colissimo"], ["livraison gratuite dans un rayon de 40km"]], {}, {class: "form-control"} %>
+            <%= f.select :delivery, [["En boutique"], ["Livraison gratuite dans un rayon de 40km"], ["Livraison Colissim (frais de port 5,00€)"]], {}, {class: "form-control"} %>
             <br>
             <div class="button-diagonal">
-              <button><%= f.submit 'Commandez'%></button>
+              <button><%= f.submit 'Commandez', id:"button-diagonal-cart"%></button>
               <span class="triangle-top-left"></span>
               <span class="triangle-bottom-right"></span>
             </div>
           <% end %>
         <% elsif @current_cart.deliver == 0 && @cart.sub_total < 50.to_money%>
           <%= form_for @current_cart do |f| %>
-            <%= f.select :delivery, [["En boutique"], ["livraison Colissimo"]], {}, {class: "form-control"} %>
+            <%= f.select :delivery, [["En boutique"], ["Livraison Colissimo (frais de port 5,00€)"]], {}, {class: "form-control"} %>
             <br>
             <div class="button-diagonal">
-              <button><%= f.submit 'Commandez'%></button>
+              <button><%= f.submit 'Commandez', id:"button-diagonal-cart"%></button>
               <span class="triangle-top-left"></span>
               <span class="triangle-bottom-right"></span>
             </div>
@@ -79,8 +80,8 @@
             <%= form_for @current_cart do |f| %>
               <%= f.select :delivery, [["En boutique"]], {}, {class: "form-control"} %>
               <br>
-              <div class="button-diagonal">
-                 <button><%= f.submit 'Commandez'%></button>
+              <div class="button-diagonal" >
+                 <button><%= f.submit 'Commandez', id:"button-diagonal-cart"%></button>
                  <span class="triangle-top-left"></span>
                  <span class="triangle-bottom-right"></span>
                </div>

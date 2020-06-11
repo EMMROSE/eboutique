@@ -9,20 +9,27 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @current_cart.line_items.each { |item| @order.line_items << item }
-    @order.amount = @current_cart.sub_total
     @order.delivery = @current_cart.delivery
-    # if @order.delivery
-    #   @order.amount = @current_cart.sub_total + 5.to_money
-    # else
-    #   @order.amount = @current_cart.sub_total
-    # end
+    if @order.delivery == "Livraison Colissimo (frais de port 5,00€)"
+      @order.amount += (@current_cart.sub_total + 5.to_money)
+    else
+      @order.amount = @current_cart.sub_total
+    end
     @order.user = current_user if current_user
     if @order.save
-      save_user_address if params[:save_address].to_i == 1
-      trigger_stripe
+      session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        line_items: [{
+          name: "Commande n° #{@order.id} au nom de  #{@order.fullname} pour #{@order.line_items.count} article(s)",
+          amount: @order.amount_cents,
+          currency: 'eur',
+          quantity: 1
+        }],
+        success_url: order_url(@order),
+        cancel_url: order_url(@order)
+      )
+      @order.update(checkout_session_id: session.id)
       cleanup_cart
-      OrderMailer.confirmation(@order).deliver_now
-      OrderMailer.information(@order).deliver_now
       redirect_to new_order_payment_path(@order)
     else
       @cart = @current_cart
@@ -35,6 +42,8 @@ class OrdersController < ApplicationController
     #   @order = current_user.orders.find(params[:id])
     # else
     @order = Order.find(params[:id])
+    OrderMailer.confirmation(@order).deliver_now
+    OrderMailer.information(@order).deliver_now
     # end
   end
 
