@@ -48,6 +48,7 @@
         <% if @current_cart.deliver > 0 && @cart.sub_total >= 50.to_money%>
           <%= form_for @current_cart do |f| %>
             <%= f.select :delivery, [["En boutique"], ["livraison gratuite dans un rayon de 40km"]], {}, {class: "form-control"} %>
+            <br>
             <div class="button-diagonal">
               <button><%= f.submit 'Commandez'%></button>
               <span class="triangle-top-left"></span>
@@ -57,6 +58,7 @@
         <% elsif @current_cart.deliver == 0 && @cart.sub_total >= 50.to_money%>
           <%= form_for @current_cart do |f| %>
             <%= f.select :delivery, [["En boutique"], ["livraison Colissimo"], ["livraison gratuite dans un rayon de 40km"]], {}, {class: "form-control"} %>
+            <br>
             <div class="button-diagonal">
               <button><%= f.submit 'Commandez'%></button>
               <span class="triangle-top-left"></span>
@@ -66,6 +68,7 @@
         <% elsif @current_cart.deliver == 0 && @cart.sub_total < 50.to_money%>
           <%= form_for @current_cart do |f| %>
             <%= f.select :delivery, [["En boutique"], ["livraison Colissimo"]], {}, {class: "form-control"} %>
+            <br>
             <div class="button-diagonal">
               <button><%= f.submit 'Commandez'%></button>
               <span class="triangle-top-left"></span>
@@ -75,7 +78,8 @@
         <% else %>
             <%= form_for @current_cart do |f| %>
               <%= f.select :delivery, [["En boutique"]], {}, {class: "form-control"} %>
-               <div class="button-diagonal">
+              <br>
+              <div class="button-diagonal">
                  <button><%= f.submit 'Commandez'%></button>
                  <span class="triangle-top-left"></span>
                  <span class="triangle-bottom-right"></span>
