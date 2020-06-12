@@ -11,6 +11,7 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.string :checkout_session_id
       t.monetize :amount
       t.string :delivery
+      t.boolean :cgv
       t.references :user, null: true, foreign_key: true
 
       t.timestamps
