@@ -10,6 +10,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :brand
       t.string :deliverable, default: "false"
       t.integer :quantity, default: 1
+      t.boolean :available, default: true
 
       t.timestamps
     end

@@ -9,6 +9,7 @@
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>
     <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description du produit..." %>
     <%= f.input :deliverable, as: :radio_buttons, collection: ['false', 'true'], wrapper: :vertical_collection_inline %>
+    <%= f.input :available, as: :boolean %>
     <br>
     <div class="d-flex">
       <%= f.input :cover, label: 'Ajoutez une photo de couverture', as: :file %>
