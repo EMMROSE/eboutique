@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   DELIVERABLE = ['false', 'true']
   validates :name, presence: true, length: { in: 3...30 }
   validates :price_cents, presence: true, numericality: { greater_than: 0 }
+  validates :quantity, presence: true
   validates :sku, presence: true, uniqueness: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   validates :deliverable, presence: true, inclusion: { in: DELIVERABLE }

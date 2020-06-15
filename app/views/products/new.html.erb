@@ -5,12 +5,13 @@
     <%= f.input :category, as: :radio_buttons, collection: ['art de table', 'décoration', 'luminaires', 'linge de maison', 'mobilier'], wrapper: :vertical_collection_inline %>
     <%= f.input :name, label: 'Nom', placeholder: "Nom du produit" %>
     <%= f.input :brand, label: 'Marque', placeholder: "Marque du produit" %>
-    <%= f.number_field :price_cents, label: "Prix (en centimes)", placeholder: 0%>
-    <%= f.number_field :quantity, label: "Quantité enstock", placeholder: 0%>
+    <%= f.label "Prix (saisir en centimes)" %>
+    <%= f.number_field :price_cents%>
+    <%= f.label "Quantité disponible" %>
+    <%= f.number_field :quantity, placeholder: 0%>
     <%= f.input :sku, label: 'Référence (SKU)', placeholder: "Référence du produit" %>
     <%= f.input :description, label: 'Ajoutez une description', as: :text, placeholder: "Rédiger ici la description du produit..." %>
     <%= f.input :deliverable, as: :radio_buttons, collection: ['false', 'true'], wrapper: :vertical_collection_inline %>
-    <%= f.input :available, as: :boolean %>
     <br>
     <div class="d-flex">
       <%= f.input :cover, label: 'Ajoutez une photo de couverture', as: :file %>

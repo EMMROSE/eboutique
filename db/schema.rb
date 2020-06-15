@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_164110) do
     t.string "category"
     t.string "brand"
     t.string "deliverable", default: "false"
-    t.integer "quantity", default: 1
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "cover"
