@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'linge', to: 'pages#linge'
   get 'mobilier', to: 'pages#mobilier'
   get 'admin', to: 'pages#admin'
+  get 'mention', to: 'pages#mention'
 
   resources :contacts, only: [:new, :create]
   resources :events
