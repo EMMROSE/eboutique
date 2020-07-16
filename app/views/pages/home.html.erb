@@ -72,12 +72,14 @@
     <div class="map_contact" id="map">
       <script class="map-style">
         mapboxgl.accessToken = "<%= ENV['MAPBOX_API_KEY'] %>";
-      var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-      center: [6.0470777, 43.1093471], // starting position [lng, lat]
-      zoom: 17 // starting zoom
-      });
+
+        var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [6.0470777, 43.1093471], // starting position [lng, lat]
+        zoom: 17 // starting zoom
+        });
+
       </script>
     </div>
   </div>

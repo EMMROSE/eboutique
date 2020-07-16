@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, except: :admin
 
   def home
+    @marker =
+      {
+        lat: 43.1093471,
+        lng: 6.0470777,
+      }
   end
 
   def boutique
