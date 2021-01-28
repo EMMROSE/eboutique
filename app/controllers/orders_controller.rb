@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
-          name: "Commande n° #{@order.id} au nom de  #{@order.fullname} pour #{@order.line_items.count} article(s)",
+          name: "Samedi 28 - #{@order.line_items.count} article(s)",
           amount: @order.amount_cents,
           currency: 'eur',
           quantity: 1
